@@ -7,8 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const contextUpload = document.getElementById('context-upload');
     const contextText = document.getElementById('context-text');
     const textImageUpload = document.getElementById('text-image-upload');
+    const textFileUpload = document.getElementById('text-file-upload');
     const contextImageUpload = document.getElementById('context-image-upload');
     const suggestImprovements = document.getElementById('suggest-improvements');
+
+    // Input type selectors
+    const analysisTypeRadios = document.querySelectorAll('input[name="analysis-type"]');
+    const contextTypeRadios = document.querySelectorAll('input[name="context-type"]');
+
+    // Input sections
+    const analysisTextInput = document.getElementById('analysis-text-input');
+    const analysisImageInput = document.getElementById('analysis-image-input');
+    const analysisFileInput = document.getElementById('analysis-file-input');
+    const contextTextInput = document.getElementById('context-text-input');
+    const contextImageInput = document.getElementById('context-image-input');
+    const contextFileInput = document.getElementById('context-file-input');
 
     // Initialize theme
     initializeTheme();
@@ -18,6 +31,56 @@ document.addEventListener('DOMContentLoaded', () => {
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
     }
+
+    // Handle analysis input type selection
+    analysisTypeRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            // Hide all analysis input sections
+            analysisTextInput.style.display = 'none';
+            analysisImageInput.style.display = 'none';
+            analysisFileInput.style.display = 'none';
+            
+            // Show selected section
+            switch (radio.value) {
+                case 'text':
+                    analysisTextInput.style.display = 'block';
+                    break;
+                case 'image':
+                    analysisImageInput.style.display = 'block';
+                    break;
+                case 'file':
+                    analysisFileInput.style.display = 'block';
+                    break;
+            }
+        });
+    });
+
+    // Handle context input type selection
+    contextTypeRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            // Hide all context input sections
+            contextTextInput.style.display = 'none';
+            contextImageInput.style.display = 'none';
+            contextFileInput.style.display = 'none';
+            
+            // Show selected section
+            switch (radio.value) {
+                case 'text':
+                    contextTextInput.style.display = 'block';
+                    break;
+                case 'image':
+                    contextImageInput.style.display = 'block';
+                    break;
+                case 'file':
+                    contextFileInput.style.display = 'block';
+                    break;
+                case 'none':
+                default:
+                    // All sections remain hidden
+                    break;
+            }
+        });
+    });
 
     // Check for API key on page load and show warning if not set
     function checkApiKeyAndShowWarning() {
@@ -326,50 +389,89 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Check if we have text input or image input
-        let hasTextInput = textToAnalyze.length > 0;
-        let hasImageInput = textImageUpload.files[0];
-        
-        if (!hasTextInput && !hasImageInput) {
-            errorMessageP.textContent = 'Please enter some text to analyze or upload an image.';
-            errorMessageP.style.display = 'block';
-            return;
+        // Get selected analysis type and validate input
+        const analysisType = document.querySelector('input[name="analysis-type"]:checked').value;
+        let hasTextInput = false;
+        let hasImageInput = false;
+        let textImageBase64 = '';
+
+        switch (analysisType) {
+            case 'text':
+                hasTextInput = textToAnalyze.length > 0;
+                if (!hasTextInput) {
+                    errorMessageP.textContent = 'Please enter some text to analyze.';
+                    errorMessageP.style.display = 'block';
+                    return;
+                }
+                break;
+            case 'image':
+                hasImageInput = textImageUpload.files[0];
+                if (!hasImageInput) {
+                    errorMessageP.textContent = 'Please select an image to analyze.';
+                    errorMessageP.style.display = 'block';
+                    return;
+                }
+                try {
+                    textImageBase64 = await readImageAsBase64(textImageUpload.files[0]);
+                } catch (error) {
+                    errorMessageP.textContent = 'Error reading text image. Please try again.';
+                    errorMessageP.style.display = 'block';
+                    return;
+                }
+                break;
+            case 'file':
+                if (!textFileUpload.files[0]) {
+                    errorMessageP.textContent = 'Please select a text file to analyze.';
+                    errorMessageP.style.display = 'block';
+                    return;
+                }
+                try {
+                    const fileContent = await readFileAsText(textFileUpload.files[0]);
+                    debateTextInput.value = fileContent; // Set the text for analysis
+                    hasTextInput = true;
+                } catch (error) {
+                    errorMessageP.textContent = 'Error reading text file. Please try again.';
+                    errorMessageP.style.display = 'block';
+                    return;
+                }
+                break;
         }
 
-        // Get context from file upload, image upload, or text input
+        // Get selected context type and process context
+        const contextType = document.querySelector('input[name="context-type"]:checked').value;
         let contextContent = '';
         let contextImageBase64 = '';
-        
-        if (contextUpload.files[0]) {
-            try {
-                contextContent = await readFileAsText(contextUpload.files[0]);
-            } catch (error) {
-                errorMessageP.textContent = 'Error reading context file. Please try again.';
-                errorMessageP.style.display = 'block';
-                return;
-            }
-        } else if (contextImageUpload.files[0]) {
-            try {
-                contextImageBase64 = await readImageAsBase64(contextImageUpload.files[0]);
-            } catch (error) {
-                errorMessageP.textContent = 'Error reading context image. Please try again.';
-                errorMessageP.style.display = 'block';
-                return;
-            }
-        } else if (contextText.value.trim()) {
-            contextContent = contextText.value.trim();
-        }
 
-        // Get main text image if uploaded
-        let textImageBase64 = '';
-        if (textImageUpload.files[0]) {
-            try {
-                textImageBase64 = await readImageAsBase64(textImageUpload.files[0]);
-            } catch (error) {
-                errorMessageP.textContent = 'Error reading text image. Please try again.';
-                errorMessageP.style.display = 'block';
-                return;
-            }
+        switch (contextType) {
+            case 'text':
+                contextContent = contextText.value.trim();
+                break;
+            case 'image':
+                if (contextImageUpload.files[0]) {
+                    try {
+                        contextImageBase64 = await readImageAsBase64(contextImageUpload.files[0]);
+                    } catch (error) {
+                        errorMessageP.textContent = 'Error reading context image. Please try again.';
+                        errorMessageP.style.display = 'block';
+                        return;
+                    }
+                }
+                break;
+            case 'file':
+                if (contextUpload.files[0]) {
+                    try {
+                        contextContent = await readFileAsText(contextUpload.files[0]);
+                    } catch (error) {
+                        errorMessageP.textContent = 'Error reading context file. Please try again.';
+                        errorMessageP.style.display = 'block';
+                        return;
+                    }
+                }
+                break;
+            case 'none':
+            default:
+                // No context
+                break;
         }
 
         loadingIndicator.style.display = 'block';

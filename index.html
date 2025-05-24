@@ -17,30 +17,78 @@
     <main>
         <section id="text-input-section">
             <h2>Enter Text for Analysis</h2>
-            <textarea id="debate-text" rows="10" placeholder="Paste the debate text here..."></textarea>
             
-            <div style="margin: 16px 0;">
-                <label for="text-image-upload">Or Upload Image with Text (optional):</label>
-                <input type="file" id="text-image-upload" accept="image/*" style="margin-bottom: 8px;">
-                <small style="display: block; color: var(--text-muted);">Upload an image containing text to analyze (screenshot, photo, etc.)</small>
+            <!-- Analysis Input Type Selector -->
+            <div class="input-type-selector" style="margin-bottom: 20px;">
+                <label style="margin-bottom: 12px; font-weight: 600;">Choose Input Type:</label>
+                <div class="radio-button-group">
+                    <label class="radio-button">
+                        <input type="radio" name="analysis-type" value="text" checked>
+                        <span class="radio-label">📝 Text</span>
+                    </label>
+                    <label class="radio-button">
+                        <input type="radio" name="analysis-type" value="image">
+                        <span class="radio-label">🖼️ Image</span>
+                    </label>
+                    <label class="radio-button">
+                        <input type="radio" name="analysis-type" value="file">
+                        <span class="radio-label">📄 File</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Analysis Input Fields -->
+            <div id="analysis-text-input" class="input-section">
+                <textarea id="debate-text" rows="10" placeholder="Paste the debate text here..."></textarea>
             </div>
             
-            <div style="margin: 16px 0;">
-                <label for="context-upload">Upload Context File (optional):</label>
-                <input type="file" id="context-upload" accept=".txt,.md" style="margin-bottom: 8px;">
-                <small style="display: block; color: var(--text-muted);">Upload a file with previous messages or conversation context</small>
+            <div id="analysis-image-input" class="input-section" style="display: none;">
+                <input type="file" id="text-image-upload" accept="image/*" class="file-input">
+                <small style="display: block; color: var(--text-muted); margin-top: 8px;">Upload an image containing text to analyze (screenshot, photo, etc.)</small>
             </div>
             
-            <div style="margin: 16px 0;">
-                <label for="context-image-upload">Upload Context Image (optional):</label>
-                <input type="file" id="context-image-upload" accept="image/*" style="margin-bottom: 8px;">
-                <small style="display: block; color: var(--text-muted);">Upload an image containing context information</small>
+            <div id="analysis-file-input" class="input-section" style="display: none;">
+                <input type="file" id="text-file-upload" accept=".txt,.md" class="file-input">
+                <small style="display: block; color: var(--text-muted); margin-top: 8px;">Upload a text file containing the argument to analyze</small>
             </div>
-            
-            <div style="margin: 16px 0;">
-                <label for="context-text">Or Enter Context Text (optional):</label>
+
+            <!-- Context Input Type Selector -->
+            <div class="input-type-selector" style="margin: 32px 0 20px 0;">
+                <label style="margin-bottom: 12px; font-weight: 600;">Add Context (optional):</label>
+                <div class="radio-button-group">
+                    <label class="radio-button">
+                        <input type="radio" name="context-type" value="none" checked>
+                        <span class="radio-label">🚫 None</span>
+                    </label>
+                    <label class="radio-button">
+                        <input type="radio" name="context-type" value="text">
+                        <span class="radio-label">📝 Text</span>
+                    </label>
+                    <label class="radio-button">
+                        <input type="radio" name="context-type" value="image">
+                        <span class="radio-label">🖼️ Image</span>
+                    </label>
+                    <label class="radio-button">
+                        <input type="radio" name="context-type" value="file">
+                        <span class="radio-label">📄 File</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Context Input Fields -->
+            <div id="context-text-input" class="input-section" style="display: none;">
                 <textarea id="context-text" rows="4" placeholder="Enter previous messages or conversation context here..."></textarea>
-                <small style="display: block; color: var(--text-muted);">Provide context to help improve analysis and suggestions</small>
+                <small style="display: block; color: var(--text-muted); margin-top: 8px;">Provide context to help improve analysis and suggestions</small>
+            </div>
+            
+            <div id="context-image-input" class="input-section" style="display: none;">
+                <input type="file" id="context-image-upload" accept="image/*" class="file-input">
+                <small style="display: block; color: var(--text-muted); margin-top: 8px;">Upload an image containing context information</small>
+            </div>
+            
+            <div id="context-file-input" class="input-section" style="display: none;">
+                <input type="file" id="context-upload" accept=".txt,.md" class="file-input">
+                <small style="display: block; color: var(--text-muted); margin-top: 8px;">Upload a file with previous messages or conversation context</small>
             </div>
             
             <div style="margin: 16px 0;">
