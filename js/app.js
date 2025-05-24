@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme
     initializeTheme();
 
+    // Add theme toggle event listener
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
     // Check for API key on page load and show warning if not set
     function checkApiKeyAndShowWarning() {
         const settings = getAllSettings();

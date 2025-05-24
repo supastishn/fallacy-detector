@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme
     initializeTheme();
 
+    // Add theme toggle event listener
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
     // Load existing settings
     apiKeyInput.value = getSetting(settingsKeys.apiKey) || '';
     baseUrlInput.value = getSetting(settingsKeys.baseUrl) || 'https://api.openai.com';
@@ -42,7 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         saveSetting(settingsKeys.apiKey, apiKey);
-        saveSetting(settingsKeys.baseUrl, baseUrl.replace(/\/+$/, ''));
+        // Remove trailing slash if it exists
+        let cleanBaseUrl = baseUrl;
+        if (cleanBaseUrl.endsWith('/')) {
+            cleanBaseUrl = cleanBaseUrl.slice(0, -1);
+        }
+        saveSetting(settingsKeys.baseUrl, cleanBaseUrl);
         saveSetting(settingsKeys.defaultModel, defaultModel);
         saveSetting(settingsKeys.temperature, temperature.toString());
 
