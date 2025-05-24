@@ -482,7 +482,13 @@ Analyze the provided text for any logical fallacies, factual inaccuracies, or ar
 
 ${textImageBase64 ? 'The user has provided an image containing text. First, extract and transcribe ALL text from the image accurately, then analyze it.' : ''}
 
-IMPORTANT: You must return the COMPLETE, ENTIRE original text with fallacies marked up in XML tags. Do not summarize, paraphrase, or shorten any part of the text.
+IMPORTANT GUIDELINES:
+1. Consider established, verifiable facts from your knowledge base. Do NOT flag well-established facts as fallacies like "begging the question" or "circular reasoning" when they are used as premises.
+2. Examples of established facts that should NOT be flagged: "Biden won the 2020 election", "Climate change is real", "The Earth is round", "COVID-19 is caused by a virus", etc.
+3. Only flag logical fallacies in the REASONING and ARGUMENTATION, not in the statement of widely accepted facts.
+4. Focus on actual logical errors, invalid inferences, and problematic reasoning patterns.
+
+You must return the COMPLETE, ENTIRE original text with fallacies marked up in XML tags. Do not summarize, paraphrase, or shorten any part of the text.
 
 For each identified issue, wrap ONLY the problematic portion in XML tags with this format:
 <fallacy type="[fallacy_name]" explanation="[brief explanation of why this is problematic]">[the exact problematic text]</fallacy>
@@ -493,6 +499,9 @@ Examples:
 
 - Original: "So you think we should just let criminals run free?"
 - Marked up: "<fallacy type="Straw Man" explanation="Misrepresenting the opponent's position to make it easier to attack">So you think we should just let criminals run free?</fallacy>"
+
+- DO NOT FLAG: "Since Biden won the 2020 election, he is the legitimate president." (This is a valid premise based on established fact)
+- DO FLAG: "Since I'm obviously right about everything, my argument must be correct." (This is circular reasoning)
 
 Return the complete original text with fallacies wrapped in XML tags. Preserve all formatting, punctuation, and structure. If there are no fallacies, return the original text exactly as provided.`;
 
