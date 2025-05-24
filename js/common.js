@@ -2,7 +2,8 @@ const settingsKeys = {
     apiKey: 'openai_api_key',
     baseUrl: 'openai_base_url',
     defaultModel: 'openai_default_model',
-    temperature: 'openai_temperature'
+    temperature: 'openai_temperature',
+    theme: 'app_theme'
 };
 
 function saveSetting(key, value) {
@@ -40,4 +41,33 @@ function clearStatusMessage(statusElement, delay = 3000) {
             statusElement.className = '';
         }, delay);
     }
+}
+
+function initializeTheme() {
+    const savedTheme = getSetting(settingsKeys.theme) || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeToggleText();
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    saveSetting(settingsKeys.theme, newTheme);
+    updateThemeToggleText();
+}
+
+function updateThemeToggleText() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        themeToggle.textContent = currentTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+    }
+}
+
+function createThemeToggle() {
+    const themeToggle = document.createElement('button');
+    themeToggle.className = 'theme-toggle';
+    themeToggle.addEventListener('click', toggleTheme);
+    return themeToggle;
 }

@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingIndicator = document.getElementById('loading-indicator');
     const errorMessageP = document.getElementById('error-message');
 
+    // Initialize theme
+    initializeTheme();
+
     // Check for API key on page load and show warning if not set
     function checkApiKeyAndShowWarning() {
         const settings = getAllSettings();
@@ -29,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function processFallacyMarkup(text, container) {
         // Check if the text contains fallacy markup
         if (!text.includes('<fallacy')) {
-            container.innerHTML = `<div style="padding: 16px; background: #d4edda; border-radius: 12px; color: #155724; border: 2px solid #c3e6cb; margin-bottom: 20px;">
+            container.innerHTML = `<div style="padding: 16px; background: var(--success-bg); border-radius: 12px; color: var(--success-text); border: 2px solid var(--success-border); margin-bottom: 20px;">
                 <strong>✅ No fallacies detected!</strong><br>
                 The analysis did not identify any logical fallacies or reasoning issues in the provided text.
             </div>
-            <div style="background: #f8f9fa; padding: 16px; border-radius: 12px; border: 2px solid #e9ecef; line-height: 1.8;">
+            <div style="background: var(--bg-secondary); padding: 16px; border-radius: 12px; border: 2px solid var(--border-color); line-height: 1.8; color: var(--text-primary);">
                 ${text.replace(/\n/g, '<br>')}
             </div>`;
             return;
@@ -73,13 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create the display with fallacy summary and highlighted text
         let fallacySummary = '';
         if (fallacies.length > 0) {
-            fallacySummary = `<div style="background: #f8d7da; padding: 16px; border-radius: 12px; color: #721c24; border: 2px solid #f5c6cb; margin-bottom: 20px;">
+            fallacySummary = `<div style="background: var(--error-bg); padding: 16px; border-radius: 12px; color: var(--error-text); border: 2px solid var(--error-border); margin-bottom: 20px;">
                 <strong>⚠️ ${fallacies.length} fallac${fallacies.length === 1 ? 'y' : 'ies'} detected!</strong><br>
                 Click on the highlighted text below to see explanations.
             </div>`;
         }
 
-        container.innerHTML = fallacySummary + `<div style="background: #f8f9fa; padding: 16px; border-radius: 12px; border: 2px solid #e9ecef; line-height: 1.8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">${processedText.replace(/\n/g, '<br>')}</div>`;
+        container.innerHTML = fallacySummary + `<div style="background: var(--bg-secondary); padding: 16px; border-radius: 12px; border: 2px solid var(--border-color); line-height: 1.8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text-primary);">${processedText.replace(/\n/g, '<br>')}</div>`;
 
         // Add click events to highlighted fallacies
         container.querySelectorAll('.fallacy-highlight').forEach(element => {
@@ -103,9 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const tooltip = document.createElement('div');
         tooltip.className = 'fallacy-tooltip';
         tooltip.innerHTML = `
-            <div style="font-weight: bold; color: #721c24; margin-bottom: 8px;">${type}</div>
-            <div>${explanation}</div>
-            <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">Click anywhere to close</div>
+            <div style="font-weight: bold; color: var(--error-text); margin-bottom: 8px;">${type}</div>
+            <div style="color: var(--text-primary);">${explanation}</div>
+            <div style="margin-top: 8px; font-size: 12px; color: var(--text-muted);">Click anywhere to close</div>
         `;
 
         // Position tooltip
@@ -113,8 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
         tooltip.style.position = 'absolute';
         tooltip.style.top = (rect.bottom + window.scrollY + 10) + 'px';
         tooltip.style.left = rect.left + 'px';
-        tooltip.style.background = '#fff';
-        tooltip.style.border = '2px solid #dc3545';
+        tooltip.style.background = 'var(--bg-primary)';
+        tooltip.style.border = '2px solid var(--error-border)';
         tooltip.style.borderRadius = '8px';
         tooltip.style.padding = '12px';
         tooltip.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';

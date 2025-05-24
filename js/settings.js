@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const testApiButton = document.getElementById('test-api-button');
     const testResults = document.getElementById('test-results');
 
+    // Initialize theme
+    initializeTheme();
+
     // Load existing settings
     apiKeyInput.value = getSetting(settingsKeys.apiKey) || '';
     baseUrlInput.value = getSetting(settingsKeys.baseUrl) || 'https://api.openai.com';
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         saveSetting(settingsKeys.apiKey, apiKey);
-        saveSetting(settingsKeys.baseUrl, baseUrl);
+        saveSetting(settingsKeys.baseUrl, baseUrl.replace(/\/+$/, ''));
         saveSetting(settingsKeys.defaultModel, defaultModel);
         saveSetting(settingsKeys.temperature, temperature.toString());
 

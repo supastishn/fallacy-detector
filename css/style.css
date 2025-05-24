@@ -1,3 +1,57 @@
+:root {
+    /* Light mode colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7fafc;
+    --bg-tertiary: #f8f9fa;
+    --text-primary: #333;
+    --text-secondary: #4a5568;
+    --text-muted: #6c757d;
+    --border-color: #e2e8f0;
+    --border-focus: #667eea;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --success-bg: #d4edda;
+    --success-text: #155724;
+    --success-border: #c3e6cb;
+    --error-bg: #f8d7da;
+    --error-text: #721c24;
+    --error-border: #f5c6cb;
+    --warning-bg: #fff3cd;
+    --warning-text: #856404;
+    --warning-border: #ffeaa7;
+    --fallacy-bg: #f8d7da;
+    --fallacy-text: #721c24;
+    --fallacy-border: #f5c6cb;
+    --fallacy-hover-bg: #f5c6cb;
+}
+
+[data-theme="dark"] {
+    /* Dark mode colors */
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --bg-tertiary: #4a5568;
+    --text-primary: #f7fafc;
+    --text-secondary: #e2e8f0;
+    --text-muted: #a0aec0;
+    --border-color: #4a5568;
+    --border-focus: #667eea;
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --shadow-medium: rgba(0, 0, 0, 0.4);
+    --success-bg: #2d5a41;
+    --success-text: #9ae6b4;
+    --success-border: #38a169;
+    --error-bg: #553c4e;
+    --error-text: #feb2b2;
+    --error-border: #e53e3e;
+    --warning-bg: #5d4e37;
+    --warning-text: #faf089;
+    --warning-border: #d69e2e;
+    --fallacy-bg: #553c4e;
+    --fallacy-text: #feb2b2;
+    --fallacy-border: #e53e3e;
+    --fallacy-hover-bg: #744560;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -7,9 +61,10 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: #ffffff;
-    color: #333;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -47,13 +102,30 @@ header nav a:hover {
     transform: translateY(-2px);
 }
 
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
 main {
     padding: 40px 20px;
     max-width: 900px;
     margin: 20px auto;
-    background: #ffffff;
+    background: var(--bg-primary);
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px var(--shadow-light);
 }
 
 section {
@@ -61,7 +133,7 @@ section {
 }
 
 h2 {
-    color: #2d3748;
+    color: var(--text-primary);
     font-weight: 600;
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -83,7 +155,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #4a5568;
+    color: var(--text-secondary);
     font-size: 0.9rem;
 }
 
@@ -95,11 +167,12 @@ textarea {
     width: 100%;
     padding: 16px;
     margin-bottom: 16px;
-    border: 2px solid #e2e8f0;
+    border: 2px solid var(--border-color);
     border-radius: 12px;
     font-size: 16px;
     transition: all 0.3s ease;
-    background: #fff;
+    background: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 input[type="text"]:focus,
@@ -108,7 +181,7 @@ input[type="password"]:focus,
 input[type="number"]:focus,
 textarea:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: var(--border-focus);
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     transform: translateY(-2px);
 }
@@ -199,14 +272,15 @@ button:disabled {
 }
 
 #analysis-results {
-    background: #f7fafc;
+    background: var(--bg-secondary);
     padding: 24px;
     border-radius: 12px;
     min-height: 80px;
     white-space: pre-wrap;
-    border: 2px solid #e2e8f0;
+    border: 2px solid var(--border-color);
     font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
     line-height: 1.7;
+    color: var(--text-primary);
 }
 
 .error {
@@ -257,18 +331,18 @@ footer a:hover {
 }
 
 .fallacy-highlight {
-    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
-    color: #721c24;
+    background: var(--fallacy-bg);
+    color: var(--fallacy-text);
     padding: 2px 4px;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 1px solid #f5c6cb;
+    border: 1px solid var(--fallacy-border);
     font-weight: 500;
 }
 
 .fallacy-highlight:hover {
-    background: linear-gradient(135deg, #f5c6cb, #f1aeb5);
+    background: var(--fallacy-hover-bg);
     transform: scale(1.02);
     box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
