@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallacy Detector</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Debate Fallacy Detector</h1>
+        <nav>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+    <main>
+        <section id="text-input-section">
+            <h2>Enter Text for Analysis</h2>
+            <textarea id="debate-text" rows="10" placeholder="Paste the debate text here..."></textarea>
+            <button id="analyze-button">Analyze Text</button>
+            <div id="loading-indicator" style="display: none;">Analyzing...</div>
+        </section>
+        <section id="results-section">
+            <h2>Analysis Results</h2>
+            <div id="analysis-results">
+                <p>Results will appear here.</p>
+            </div>
+            <p id="error-message" class="error"></p>
+        </section>
+    </main>
+    <footer>
+        <p>
+            <a href="https://supastishn.github.io" target="_blank">See more cool stuff</a>
+            <a href="https://github.com/supastishn/fallacy-detector" target="_blank">See the source code</a>
+        </p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

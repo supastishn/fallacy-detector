@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Fallacy Detector</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <main>
+        <section id="settings-form-section">
+            <h2>OpenAI API Configuration</h2>
+            <form id="settings-form">
+                <div>
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" name="api-key" required>
+                </div>
+                <div>
+                    <label for="base-url">Base URL:</label>
+                    <input type="url" id="base-url" name="base-url" placeholder="https://api.openai.com" required>
+                </div>
+                <div>
+                    <label for="default-model">Default Model:</label>
+                    <input type="text" id="default-model" name="default-model" placeholder="gpt-3.5-turbo" required>
+                </div>
+                <button type="submit">Save Settings</button>
+            </form>
+            <button type="button" id="test-api-button">Test API Connection</button>
+            <p id="status-message"></p>
+            <div id="test-results" style="display: none;"></div>
+        </section>
+    </main>
+    <footer>
+        <p>
+            <a href="https://supastishn.github.io" target="_blank">See more cool stuff</a>
+            <a href="https://github.com/supastishn/fallacy-detector" target="_blank">See the source code</a>
+        </p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>
