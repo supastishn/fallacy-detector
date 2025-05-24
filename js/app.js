@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const analysisResultsDiv = document.getElementById('analysis-results');
     const loadingIndicator = document.getElementById('loading-indicator');
     const errorMessageP = document.getElementById('error-message');
+    const contextUpload = document.getElementById('context-upload');
+    const contextText = document.getElementById('context-text');
+    const suggestImprovements = document.getElementById('suggest-improvements');
 
     // Initialize theme
     initializeTheme();
@@ -31,6 +34,70 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (existingWarning) {
             existingWarning.remove();
+        }
+    }
+
+    // Function to read uploaded file as text
+    function readFileAsText(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => resolve(e.target.result);
+            reader.onerror = (e) => reject(new Error('Failed to read file'));
+            reader.readAsText(file);
+        });
+    }
+
+    // Function to process analysis response with fallacies and suggestions
+    function processAnalysisResponse(text, container) {
+        // Split the response into sections
+        const improvementsSplit = text.split('SUGGESTED IMPROVEMENTS:');
+        const fallacyText = improvementsSplit[0].trim();
+        
+        let suggestionsText = '';
+        let revisedText = '';
+        
+        if (improvementsSplit.length > 1) {
+            const remainingText = improvementsSplit[1];
+            const revisedSplit = remainingText.split('REVISED TEXT:');
+            suggestionsText = revisedSplit[0].trim();
+            revisedText = revisedSplit.length > 1 ? revisedSplit[1].trim() : '';
+        }
+
+        // Process the fallacy markup
+        processFallacyMarkup(fallacyText, container);
+
+        // Add suggestions section if present
+        if (suggestionsText) {
+            const suggestionsDiv = document.createElement('div');
+            suggestionsDiv.style.cssText = `
+                margin-top: 24px;
+                padding: 20px;
+                background: var(--bg-secondary);
+                border-radius: 12px;
+                border: 2px solid var(--border-color);
+            `;
+            suggestionsDiv.innerHTML = `
+                <h3 style="color: var(--text-primary); margin-bottom: 16px; font-size: 1.2rem;">💡 Suggested Improvements</h3>
+                <div style="color: var(--text-primary); line-height: 1.7;">${suggestionsText.replace(/\n/g, '<br>')}</div>
+            `;
+            container.appendChild(suggestionsDiv);
+        }
+
+        // Add revised text section if present
+        if (revisedText) {
+            const revisedDiv = document.createElement('div');
+            revisedDiv.style.cssText = `
+                margin-top: 24px;
+                padding: 20px;
+                background: var(--bg-secondary);
+                border-radius: 12px;
+                border: 2px solid var(--border-color);
+            `;
+            revisedDiv.innerHTML = `
+                <h3 style="color: var(--text-primary); margin-bottom: 16px; font-size: 1.2rem;">✏️ Revised Text</h3>
+                <div style="color: var(--text-primary); line-height: 1.7; background: var(--bg-primary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color);">${processDiffMarkup(revisedText)}</div>
+            `;
+            container.appendChild(revisedDiv);
         }
     }
 
@@ -150,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     analyzeButton.addEventListener('click', async () => {
         const textToAnalyze = debateTextInput.value.trim();
         const settings = getAllSettings();
+        const shouldSuggestImprovements = suggestImprovements.checked;
 
         analysisResultsDiv.innerHTML = '<p>Results will appear here.</p>'; // Reset results
         errorMessageP.textContent = '';
@@ -167,10 +235,24 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Get context from file upload or text input
+        let contextContent = '';
+        if (contextUpload.files[0]) {
+            try {
+                contextContent = await readFileAsText(contextUpload.files[0]);
+            } catch (error) {
+                errorMessageP.textContent = 'Error reading context file. Please try again.';
+                errorMessageP.style.display = 'block';
+                return;
+            }
+        } else if (contextText.value.trim()) {
+            contextContent = contextText.value.trim();
+        }
+
         loadingIndicator.style.display = 'block';
         analyzeButton.disabled = true;
 
-        const systemPrompt = `You are an expert in logical fallacies, critical thinking, and debate analysis.
+        let systemPrompt = `You are an expert in logical fallacies, critical thinking, and debate analysis.
 Analyze the provided text for any logical fallacies, factual inaccuracies, or areas of weak reasoning.
 
 IMPORTANT: You must return the COMPLETE, ENTIRE original text with fallacies marked up in XML tags. Do not summarize, paraphrase, or shorten any part of the text.
@@ -187,7 +269,42 @@ Examples:
 
 Return the complete original text with fallacies wrapped in XML tags. Preserve all formatting, punctuation, and structure. If there are no fallacies, return the original text exactly as provided.`;
 
+        if (shouldSuggestImprovements) {
+            systemPrompt += `
+
+ADDITIONAL TASK: After the marked-up text, add TWO sections:
+
+1. "SUGGESTED IMPROVEMENTS:" with specific suggestions for how to improve the argument. Focus on:
+   - Replacing fallacious reasoning with stronger logical arguments
+   - Adding evidence or examples where claims are unsupported
+   - Improving clarity and structure
+   - Addressing potential counterarguments
+   Format improvements as a numbered list with clear, actionable suggestions.
+
+2. "REVISED TEXT:" with a complete rewrite of the original text that addresses the identified issues. Use diff-style formatting:
+   - Wrap removed text in <removed>text to be removed</removed> tags
+   - Wrap added text in <added>new text to be added</added> tags
+   - Keep unchanged text as-is
+   
+   Example format:
+   Original: "You're clearly wrong because everyone knows that."
+   Revised: "<removed>You're clearly wrong because everyone knows that.</removed><added>I respectfully disagree with your position. According to recent studies by [specific source], the evidence suggests that [specific evidence].</added>"`;
+        }
+
+        if (contextContent) {
+            systemPrompt += `
+
+CONTEXT: The following context from previous messages has been provided to help inform your analysis:
+${contextContent}
+
+Use this context to better understand the ongoing discussion and provide more relevant suggestions.`;
+        }
+
         try {
+            const userMessage = contextContent 
+                ? `Context:\n${contextContent}\n\nText to analyze:\n${textToAnalyze}`
+                : textToAnalyze;
+
             const response = await fetch(`${settings.baseUrl}/chat/completions`, {
                 method: 'POST',
                 headers: {
@@ -198,7 +315,7 @@ Return the complete original text with fallacies wrapped in XML tags. Preserve a
                     model: settings.defaultModel,
                     messages: [
                         { role: "system", content: systemPrompt },
-                        { role: "user", content: textToAnalyze }
+                        { role: "user", content: userMessage }
                     ],
                     stream: true,
                     temperature: settings.temperature
@@ -249,7 +366,7 @@ Return the complete original text with fallacies wrapped in XML tags. Preserve a
             } else {
                 // Add a small delay to let users see the complete XML, then process it
                 setTimeout(() => {
-                    processFallacyMarkup(fullResponse, analysisResultsDiv);
+                    processAnalysisResponse(fullResponse, analysisResultsDiv);
                 }, 1000);
             }
 

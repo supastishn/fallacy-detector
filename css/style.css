@@ -163,6 +163,7 @@ input[type="text"],
 input[type="url"],
 input[type="password"],
 input[type="number"],
+input[type="file"],
 textarea {
     width: 100%;
     padding: 16px;
@@ -179,6 +180,7 @@ input[type="text"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="number"]:focus,
+input[type="file"]:focus,
 textarea:focus {
     outline: none;
     border-color: var(--border-focus);
@@ -354,4 +356,33 @@ footer a:hover {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+input[type="file"] {
+    padding: 12px;
+    border: 2px dashed var(--border-color);
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    border-color: var(--border-focus);
+    background: var(--bg-primary);
+}
+
+/* Diff styling for dark mode */
+[data-theme="dark"] .diff-removed {
+    background-color: #4a2c2a !important;
+    color: #ff7675 !important;
+}
+
+[data-theme="dark"] .diff-added {
+    background-color: #2d5a41 !important;
+    color: #81ecec !important;
 }
