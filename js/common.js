@@ -1,7 +1,8 @@
 const settingsKeys = {
     apiKey: 'openai_api_key',
     baseUrl: 'openai_base_url',
-    defaultModel: 'openai_default_model'
+    defaultModel: 'openai_default_model',
+    temperature: 'openai_temperature'
 };
 
 function saveSetting(key, value) {
@@ -27,7 +28,8 @@ function getAllSettings() {
     return {
         apiKey: getSetting(settingsKeys.apiKey),
         baseUrl: getSetting(settingsKeys.baseUrl) || 'https://api.openai.com', // Default base URL
-        defaultModel: getSetting(settingsKeys.defaultModel) || 'gpt-3.5-turbo' // Default model
+        defaultModel: getSetting(settingsKeys.defaultModel) || 'gpt-3.5-turbo', // Default model
+        temperature: parseFloat(getSetting(settingsKeys.temperature)) || 0.3 // Default temperature
     };
 }
 

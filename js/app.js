@@ -25,6 +25,116 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to process fallacy markup and create interactive display
+    function processFallacyMarkup(text, container) {
+        // Check if the text contains fallacy markup
+        if (!text.includes('<fallacy')) {
+            container.innerHTML = `<div style="padding: 16px; background: #d4edda; border-radius: 12px; color: #155724; border: 2px solid #c3e6cb; margin-bottom: 20px;">
+                <strong>✅ No fallacies detected!</strong><br>
+                The analysis did not identify any logical fallacies or reasoning issues in the provided text.
+            </div>
+            <div style="background: #f8f9fa; padding: 16px; border-radius: 12px; border: 2px solid #e9ecef; line-height: 1.8;">
+                ${text.replace(/\n/g, '<br>')}
+            </div>`;
+            return;
+        }
+
+        // Parse fallacies from the text
+        const fallacyRegex = /<fallacy type="([^"]*)" explanation="([^"]*)">(.*?)<\/fallacy>/gs;
+        let match;
+        let processedText = text;
+        let fallacyCount = 0;
+        const fallacies = [];
+
+        // Reset regex index
+        fallacyRegex.lastIndex = 0;
+
+        // Extract fallacies and replace with highlighted spans
+        while ((match = fallacyRegex.exec(text)) !== null) {
+            const [fullMatch, type, explanation, content] = match;
+            fallacyCount++;
+            const fallacyId = `fallacy-${fallacyCount}`;
+            
+            fallacies.push({
+                id: fallacyId,
+                type: type,
+                explanation: explanation,
+                content: content
+            });
+
+            // Replace the XML with a highlighted span (escape HTML in attributes)
+            const escapedType = type.replace(/"/g, '&quot;');
+            const escapedExplanation = explanation.replace(/"/g, '&quot;');
+            processedText = processedText.replace(fullMatch, 
+                `<span class="fallacy-highlight" data-fallacy-id="${fallacyId}" data-type="${escapedType}" data-explanation="${escapedExplanation}">${content}</span>`
+            );
+        }
+
+        // Create the display with fallacy summary and highlighted text
+        let fallacySummary = '';
+        if (fallacies.length > 0) {
+            fallacySummary = `<div style="background: #f8d7da; padding: 16px; border-radius: 12px; color: #721c24; border: 2px solid #f5c6cb; margin-bottom: 20px;">
+                <strong>⚠️ ${fallacies.length} fallac${fallacies.length === 1 ? 'y' : 'ies'} detected!</strong><br>
+                Click on the highlighted text below to see explanations.
+            </div>`;
+        }
+
+        container.innerHTML = fallacySummary + `<div style="background: #f8f9fa; padding: 16px; border-radius: 12px; border: 2px solid #e9ecef; line-height: 1.8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">${processedText.replace(/\n/g, '<br>')}</div>`;
+
+        // Add click events to highlighted fallacies
+        container.querySelectorAll('.fallacy-highlight').forEach(element => {
+            element.addEventListener('click', function() {
+                const type = this.getAttribute('data-type');
+                const explanation = this.getAttribute('data-explanation');
+                showFallacyTooltip(this, type, explanation);
+            });
+        });
+    }
+
+    // Function to show fallacy tooltip
+    function showFallacyTooltip(element, type, explanation) {
+        // Remove any existing tooltips
+        const existingTooltip = document.querySelector('.fallacy-tooltip');
+        if (existingTooltip) {
+            existingTooltip.remove();
+        }
+
+        // Create tooltip
+        const tooltip = document.createElement('div');
+        tooltip.className = 'fallacy-tooltip';
+        tooltip.innerHTML = `
+            <div style="font-weight: bold; color: #721c24; margin-bottom: 8px;">${type}</div>
+            <div>${explanation}</div>
+            <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">Click anywhere to close</div>
+        `;
+
+        // Position tooltip
+        const rect = element.getBoundingClientRect();
+        tooltip.style.position = 'absolute';
+        tooltip.style.top = (rect.bottom + window.scrollY + 10) + 'px';
+        tooltip.style.left = rect.left + 'px';
+        tooltip.style.background = '#fff';
+        tooltip.style.border = '2px solid #dc3545';
+        tooltip.style.borderRadius = '8px';
+        tooltip.style.padding = '12px';
+        tooltip.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+        tooltip.style.zIndex = '1000';
+        tooltip.style.maxWidth = '300px';
+        tooltip.style.fontSize = '14px';
+
+        document.body.appendChild(tooltip);
+
+        // Close tooltip when clicking anywhere
+        const closeTooltip = () => {
+            tooltip.remove();
+            document.removeEventListener('click', closeTooltip);
+        };
+        
+        setTimeout(() => {
+            document.addEventListener('click', closeTooltip);
+        }, 100);
+    }
+
     // Check API key on page load
     checkApiKeyAndShowWarning();
 
@@ -53,15 +163,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const systemPrompt = `You are an expert in logical fallacies, critical thinking, and debate analysis.
 Analyze the provided text for any logical fallacies, factual inaccuracies, or areas of weak reasoning.
-For each identified issue, please:
-1. State the type of fallacy/incorrectness.
-2. Quote the relevant part of the text.
-3. Provide a brief explanation of why it's an issue.
-If there are no significant issues, state that clearly.
-Present your findings in a clear, well-structured format.`;
+
+IMPORTANT: You must return the COMPLETE, ENTIRE original text with fallacies marked up in XML tags. Do not summarize, paraphrase, or shorten any part of the text.
+
+For each identified issue, wrap ONLY the problematic portion in XML tags with this format:
+<fallacy type="[fallacy_name]" explanation="[brief explanation of why this is problematic]">[the exact problematic text]</fallacy>
+
+Examples:
+- Original: "You're clearly an idiot, so your argument is wrong."
+- Marked up: "<fallacy type="Ad Hominem" explanation="Attacking the person rather than addressing their argument">You're clearly an idiot</fallacy>, so your argument is wrong."
+
+- Original: "So you think we should just let criminals run free?"
+- Marked up: "<fallacy type="Straw Man" explanation="Misrepresenting the opponent's position to make it easier to attack">So you think we should just let criminals run free?</fallacy>"
+
+Return the complete original text with fallacies wrapped in XML tags. Preserve all formatting, punctuation, and structure. If there are no fallacies, return the original text exactly as provided.`;
 
         try {
-            const response = await fetch(`${settings.baseUrl}/v1/chat/completions`, {
+            const response = await fetch(`${settings.baseUrl}/chat/completions`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -74,7 +192,7 @@ Present your findings in a clear, well-structured format.`;
                         { role: "user", content: textToAnalyze }
                     ],
                     stream: true,
-                    temperature: 0.3
+                    temperature: settings.temperature
                 })
             });
 
@@ -84,7 +202,9 @@ Present your findings in a clear, well-structured format.`;
             }
 
             // Clear results and prepare for streaming
-            analysisResultsDiv.textContent = '';
+            analysisResultsDiv.innerHTML = '<div style="background: #f8f9fa; padding: 16px; border-radius: 12px; border: 2px solid #e2e8f0; font-family: monospace; white-space: pre-wrap; min-height: 80px;"></div>';
+            const streamingDiv = analysisResultsDiv.querySelector('div');
+            let fullResponse = '';
 
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
@@ -104,7 +224,9 @@ Present your findings in a clear, well-structured format.`;
                         try {
                             const parsed = JSON.parse(data);
                             if (parsed.choices && parsed.choices[0] && parsed.choices[0].delta && parsed.choices[0].delta.content) {
-                                analysisResultsDiv.textContent += parsed.choices[0].delta.content;
+                                const content = parsed.choices[0].delta.content;
+                                fullResponse += content;
+                                streamingDiv.textContent = fullResponse;
                             }
                         } catch (e) {
                             // Skip invalid JSON
@@ -113,8 +235,13 @@ Present your findings in a clear, well-structured format.`;
                 }
             }
 
-            if (!analysisResultsDiv.textContent.trim()) {
-                analysisResultsDiv.textContent = 'No response received from API.';
+            if (!fullResponse.trim()) {
+                analysisResultsDiv.innerHTML = '<p>No response received from API.</p>';
+            } else {
+                // Add a small delay to let users see the complete XML, then process it
+                setTimeout(() => {
+                    processFallacyMarkup(fullResponse, analysisResultsDiv);
+                }, 1000);
             }
 
         } catch (error) {

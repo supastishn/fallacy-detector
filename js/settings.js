@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const apiKeyInput = document.getElementById('api-key');
     const baseUrlInput = document.getElementById('base-url');
     const defaultModelInput = document.getElementById('default-model');
+    const temperatureInput = document.getElementById('temperature');
     const statusMessage = document.getElementById('status-message');
     const testApiButton = document.getElementById('test-api-button');
     const testResults = document.getElementById('test-results');
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     apiKeyInput.value = getSetting(settingsKeys.apiKey) || '';
     baseUrlInput.value = getSetting(settingsKeys.baseUrl) || 'https://api.openai.com';
     defaultModelInput.value = getSetting(settingsKeys.defaultModel) || 'gpt-3.5-turbo';
+    temperatureInput.value = getSetting(settingsKeys.temperature) || '0.3';
 
     settingsForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -20,9 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const apiKey = apiKeyInput.value.trim();
         const baseUrl = baseUrlInput.value.trim();
         const defaultModel = defaultModelInput.value.trim();
+        const temperature = parseFloat(temperatureInput.value);
 
         if (!apiKey || !baseUrl || !defaultModel) {
-            statusMessage.textContent = 'All fields are required.';
+            statusMessage.textContent = 'API Key, Base URL, and Default Model are required.';
+            statusMessage.className = 'error';
+            clearStatusMessage(statusMessage);
+            return;
+        }
+
+        if (isNaN(temperature) || temperature < 0 || temperature > 2) {
+            statusMessage.textContent = 'Temperature must be a number between 0.0 and 2.0.';
             statusMessage.className = 'error';
             clearStatusMessage(statusMessage);
             return;
@@ -31,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         saveSetting(settingsKeys.apiKey, apiKey);
         saveSetting(settingsKeys.baseUrl, baseUrl);
         saveSetting(settingsKeys.defaultModel, defaultModel);
+        saveSetting(settingsKeys.temperature, temperature.toString());
 
         statusMessage.textContent = 'Settings saved successfully! You can now return to the home page to analyze text.';
         statusMessage.className = 'success';
@@ -42,9 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const apiKey = apiKeyInput.value.trim();
         const baseUrl = baseUrlInput.value.trim();
         const defaultModel = defaultModelInput.value.trim();
+        const temperature = parseFloat(temperatureInput.value) || 0.3;
 
         if (!apiKey || !baseUrl || !defaultModel) {
-            statusMessage.textContent = 'Please fill in all fields before testing the API.';
+            statusMessage.textContent = 'Please fill in API Key, Base URL, and Default Model before testing the API.';
             statusMessage.className = 'error';
             clearStatusMessage(statusMessage);
             return;
@@ -56,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         testResults.innerHTML = '<div style="padding: 16px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; color: #667eea;">Testing API connection...</div>';
 
         try {
-            const response = await fetch(`${baseUrl}/v1/chat/completions`, {
+            const response = await fetch(`${baseUrl}/chat/completions`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         { role: "user", content: "Say 'API test successful!' and nothing else." }
                     ],
                     stream: true,
-                    temperature: 0.3
+                    temperature: temperature
                 })
             });
 
