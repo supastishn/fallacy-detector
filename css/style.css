@@ -377,12 +377,12 @@ input[type="file"]:hover {
 }
 
 /* Diff styling for dark mode */
-[data-theme="dark"] .diff-removed {
+[data-theme="dark"] span[style*="background-color: #ffeaea"] {
     background-color: #4a2c2a !important;
     color: #ff7675 !important;
 }
 
-[data-theme="dark"] .diff-added {
+[data-theme="dark"] span[style*="background-color: #eafaf1"] {
     background-color: #2d5a41 !important;
     color: #81ecec !important;
 }

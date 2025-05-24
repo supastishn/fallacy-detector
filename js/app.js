@@ -47,6 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Function to process diff markup and create colored display
+    function processDiffMarkup(text) {
+        // Process removed text (red background)
+        let processedText = text.replace(
+            /<removed>(.*?)<\/removed>/gs,
+            '<span style="background-color: #ffeaea; color: #d63031; text-decoration: line-through; padding: 2px 4px; border-radius: 3px;">$1</span>'
+        );
+        
+        // Process added text (green background)
+        processedText = processedText.replace(
+            /<added>(.*?)<\/added>/gs,
+            '<span style="background-color: #eafaf1; color: #00b894; font-weight: 500; padding: 2px 4px; border-radius: 3px;">$1</span>'
+        );
+        
+        return processedText.replace(/\n/g, '<br>');
+    }
+
     // Function to process analysis response with fallacies and suggestions
     function processAnalysisResponse(text, container) {
         // Split the response into sections
