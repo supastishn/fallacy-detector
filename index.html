@@ -20,9 +20,21 @@
             <textarea id="debate-text" rows="10" placeholder="Paste the debate text here..."></textarea>
             
             <div style="margin: 16px 0;">
+                <label for="text-image-upload">Or Upload Image with Text (optional):</label>
+                <input type="file" id="text-image-upload" accept="image/*" style="margin-bottom: 8px;">
+                <small style="display: block; color: var(--text-muted);">Upload an image containing text to analyze (screenshot, photo, etc.)</small>
+            </div>
+            
+            <div style="margin: 16px 0;">
                 <label for="context-upload">Upload Context File (optional):</label>
                 <input type="file" id="context-upload" accept=".txt,.md" style="margin-bottom: 8px;">
                 <small style="display: block; color: var(--text-muted);">Upload a file with previous messages or conversation context</small>
+            </div>
+            
+            <div style="margin: 16px 0;">
+                <label for="context-image-upload">Upload Context Image (optional):</label>
+                <input type="file" id="context-image-upload" accept="image/*" style="margin-bottom: 8px;">
+                <small style="display: block; color: var(--text-muted);">Upload an image containing context information</small>
             </div>
             
             <div style="margin: 16px 0;">

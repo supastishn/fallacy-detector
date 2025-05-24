@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessageP = document.getElementById('error-message');
     const contextUpload = document.getElementById('context-upload');
     const contextText = document.getElementById('context-text');
+    const textImageUpload = document.getElementById('text-image-upload');
+    const contextImageUpload = document.getElementById('context-image-upload');
     const suggestImprovements = document.getElementById('suggest-improvements');
 
     // Initialize theme
@@ -47,6 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Function to read image file as base64
+    function readImageAsBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const base64 = e.target.result.split(',')[1]; // Remove data:image/...;base64, prefix
+                resolve(base64);
+            };
+            reader.onerror = (e) => reject(new Error('Failed to read image file'));
+            reader.readAsDataURL(file);
+        });
+    }
+
     // Function to process diff markup and create colored display
     function processDiffMarkup(text) {
         // Process removed text (red background)
@@ -62,6 +77,26 @@ document.addEventListener('DOMContentLoaded', () => {
         );
         
         return processedText.replace(/\n/g, '<br>');
+    }
+
+    // Function to apply diff changes and return clean text
+    function applyDiffChanges(diffText) {
+        try {
+            // Remove <removed> sections entirely
+            let cleanText = diffText.replace(/<removed>.*?<\/removed>/gs, '');
+            
+            // Extract content from <added> sections
+            cleanText = cleanText.replace(/<added>(.*?)<\/added>/gs, '$1');
+            
+            // Clean up any extra whitespace
+            cleanText = cleanText.replace(/\s+/g, ' ').trim();
+            
+            return cleanText;
+        } catch (error) {
+            console.error('Error applying diff changes:', error);
+            alert('Error applying changes. Please copy the text manually.');
+            return null;
+        }
     }
 
     // Function to process analysis response with fallacies and suggestions
@@ -110,10 +145,55 @@ document.addEventListener('DOMContentLoaded', () => {
                 border-radius: 12px;
                 border: 2px solid var(--border-color);
             `;
+            
+            const applyButton = document.createElement('button');
+            applyButton.textContent = '✅ Apply Changes to My Argument';
+            applyButton.style.cssText = `
+                margin-top: 16px;
+                background: linear-gradient(135deg, #48bb78, #38a169);
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            `;
+            
+            applyButton.addEventListener('click', () => {
+                const appliedText = applyDiffChanges(revisedText);
+                if (appliedText) {
+                    debateTextInput.value = appliedText;
+                    debateTextInput.focus();
+                    
+                    // Show success message
+                    const successMsg = document.createElement('div');
+                    successMsg.style.cssText = `
+                        margin-top: 12px;
+                        padding: 12px;
+                        background: var(--success-bg);
+                        color: var(--success-text);
+                        border: 1px solid var(--success-border);
+                        border-radius: 8px;
+                        font-weight: 500;
+                    `;
+                    successMsg.textContent = '✅ Changes applied to your argument! You can now edit further or analyze again.';
+                    applyButton.parentNode.appendChild(successMsg);
+                    
+                    // Remove success message after 3 seconds
+                    setTimeout(() => {
+                        if (successMsg.parentNode) {
+                            successMsg.remove();
+                        }
+                    }, 3000);
+                }
+            });
+            
             revisedDiv.innerHTML = `
                 <h3 style="color: var(--text-primary); margin-bottom: 16px; font-size: 1.2rem;">✏️ Revised Text</h3>
                 <div style="color: var(--text-primary); line-height: 1.7; background: var(--bg-primary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color);">${processDiffMarkup(revisedText)}</div>
             `;
+            revisedDiv.appendChild(applyButton);
             container.appendChild(revisedDiv);
         }
     }
@@ -246,14 +326,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (!textToAnalyze) {
-            errorMessageP.textContent = 'Please enter some text to analyze.';
+        // Check if we have text input or image input
+        let hasTextInput = textToAnalyze.length > 0;
+        let hasImageInput = textImageUpload.files[0];
+        
+        if (!hasTextInput && !hasImageInput) {
+            errorMessageP.textContent = 'Please enter some text to analyze or upload an image.';
             errorMessageP.style.display = 'block';
             return;
         }
 
-        // Get context from file upload or text input
+        // Get context from file upload, image upload, or text input
         let contextContent = '';
+        let contextImageBase64 = '';
+        
         if (contextUpload.files[0]) {
             try {
                 contextContent = await readFileAsText(contextUpload.files[0]);
@@ -262,8 +348,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 errorMessageP.style.display = 'block';
                 return;
             }
+        } else if (contextImageUpload.files[0]) {
+            try {
+                contextImageBase64 = await readImageAsBase64(contextImageUpload.files[0]);
+            } catch (error) {
+                errorMessageP.textContent = 'Error reading context image. Please try again.';
+                errorMessageP.style.display = 'block';
+                return;
+            }
         } else if (contextText.value.trim()) {
             contextContent = contextText.value.trim();
+        }
+
+        // Get main text image if uploaded
+        let textImageBase64 = '';
+        if (textImageUpload.files[0]) {
+            try {
+                textImageBase64 = await readImageAsBase64(textImageUpload.files[0]);
+            } catch (error) {
+                errorMessageP.textContent = 'Error reading text image. Please try again.';
+                errorMessageP.style.display = 'block';
+                return;
+            }
         }
 
         loadingIndicator.style.display = 'block';
@@ -271,6 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let systemPrompt = `You are an expert in logical fallacies, critical thinking, and debate analysis.
 Analyze the provided text for any logical fallacies, factual inaccuracies, or areas of weak reasoning.
+
+${textImageBase64 ? 'The user has provided an image containing text. First, extract and transcribe ALL text from the image accurately, then analyze it.' : ''}
 
 IMPORTANT: You must return the COMPLETE, ENTIRE original text with fallacies marked up in XML tags. Do not summarize, paraphrase, or shorten any part of the text.
 
@@ -308,19 +416,88 @@ ADDITIONAL TASK: After the marked-up text, add TWO sections:
    Revised: "<removed>You're clearly wrong because everyone knows that.</removed><added>I respectfully disagree with your position. According to recent studies by [specific source], the evidence suggests that [specific evidence].</added>"`;
         }
 
-        if (contextContent) {
+        if (contextContent || contextImageBase64) {
             systemPrompt += `
 
-CONTEXT: The following context from previous messages has been provided to help inform your analysis:
-${contextContent}
+CONTEXT: The following context from previous messages has been provided to help inform your analysis:`;
+            
+            if (contextContent) {
+                systemPrompt += `
+${contextContent}`;
+            }
+            
+            if (contextImageBase64) {
+                systemPrompt += `
+[Context image provided - extract any relevant text or information from this image]`;
+            }
+            
+            systemPrompt += `
 
 Use this context to better understand the ongoing discussion and provide more relevant suggestions.`;
         }
 
         try {
-            const userMessage = contextContent 
-                ? `Context:\n${contextContent}\n\nText to analyze:\n${textToAnalyze}`
-                : textToAnalyze;
+            // Build the user message with text and images
+            let messages = [
+                { role: "system", content: systemPrompt }
+            ];
+
+            // Create user message content array
+            let userContent = [];
+
+            // Add context if available
+            if (contextContent) {
+                userContent.push({
+                    type: "text",
+                    text: `Context:\n${contextContent}`
+                });
+            }
+
+            if (contextImageBase64) {
+                userContent.push({
+                    type: "image_url",
+                    image_url: {
+                        url: `data:image/jpeg;base64,${contextImageBase64}`
+                    }
+                });
+            }
+
+            // Add main text or image to analyze
+            if (hasTextInput) {
+                userContent.push({
+                    type: "text",
+                    text: `${contextContent || contextImageBase64 ? '\n\nText to analyze:\n' : ''}${textToAnalyze}`
+                });
+            }
+
+            if (textImageBase64) {
+                userContent.push({
+                    type: "image_url",
+                    image_url: {
+                        url: `data:image/jpeg;base64,${textImageBase64}`
+                    }
+                });
+                
+                if (!hasTextInput) {
+                    userContent.push({
+                        type: "text",
+                        text: "Please analyze the text content in this image for logical fallacies."
+                    });
+                }
+            }
+
+            // If only text (no images), use simple string format for compatibility
+            if (userContent.length === 1 && userContent[0].type === "text") {
+                messages.push({
+                    role: "user",
+                    content: userContent[0].text
+                });
+            } else {
+                messages.push({
+                    role: "user",
+                    content: userContent
+                });
+            }
 
             const response = await fetch(`${settings.baseUrl}/chat/completions`, {
                 method: 'POST',
@@ -330,10 +507,7 @@ Use this context to better understand the ongoing discussion and provide more re
                 },
                 body: JSON.stringify({
                     model: settings.defaultModel,
-                    messages: [
-                        { role: "system", content: systemPrompt },
-                        { role: "user", content: userMessage }
-                    ],
+                    messages: messages,
                     stream: true,
                     temperature: settings.temperature
                 })
