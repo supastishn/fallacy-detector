@@ -91,11 +91,23 @@
                 <small style="display: block; color: var(--text-muted); margin-top: 8px;">Upload a file with previous messages or conversation context</small>
             </div>
             
-            <div style="margin: 16px 0;">
-                <label>
-                    <input type="checkbox" id="suggest-improvements" checked style="margin-right: 8px;">
-                    Suggest improved arguments
-                </label>
+            <div style="margin: 24px 0;">
+                <label style="font-weight: 600; margin-bottom: 12px;">Detection Options:</label>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <label style="font-weight: normal; display: flex; align-items: center;">
+                        <input type="checkbox" id="detect-fallacies" checked style="margin-right: 8px;">
+                        Detect Logical Fallacies
+                    </label>
+                    <label style="font-weight: normal; display: flex; align-items: center;">
+                        <input type="checkbox" id="detect-biases" checked style="margin-right: 8px;">
+                        Detect Cognitive Biases
+                    </label>
+                    <label style="font-weight: normal; display: flex; align-items: center;">
+                        <input type="checkbox" id="detect-propaganda" checked style="margin-right: 8px;">
+                        Detect Propaganda Techniques
+                    </label>
+                </div>
+                <small style="display: block; color: var(--text-muted); margin-top: 10px;">Selecting any of these will also enable suggestions for improvement and revised text.</small>
             </div>
             
             <button id="analyze-button">Analyze Text</button>
@@ -117,5 +129,7 @@
     </footer>
     <script src="js/common.js"></script>
     <script src="js/app.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
 </body>
 </html>

@@ -9,7 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const textImageUpload = document.getElementById('text-image-upload');
     const textFileUpload = document.getElementById('text-file-upload');
     const contextImageUpload = document.getElementById('context-image-upload');
-    const suggestImprovements = document.getElementById('suggest-improvements');
+    // const suggestImprovements = document.getElementById('suggest-improvements'); // Replaced by new checkboxes
+
+    // Detection option checkboxes
+    const detectFallaciesCheckbox = document.getElementById('detect-fallacies');
+    const detectBiasesCheckbox = document.getElementById('detect-biases');
+    const detectPropagandaCheckbox = document.getElementById('detect-propaganda');
 
     // Input type selectors
     const analysisTypeRadios = document.querySelectorAll('input[name="analysis-type"]');
@@ -377,7 +382,10 @@ document.addEventListener('DOMContentLoaded', () => {
     analyzeButton.addEventListener('click', async () => {
         const textToAnalyze = debateTextInput.value.trim();
         const settings = getAllSettings();
-        const shouldSuggestImprovements = suggestImprovements.checked;
+        
+        const detectFallacies = detectFallaciesCheckbox.checked;
+        const detectBiases = detectBiasesCheckbox.checked;
+        const detectPropaganda = detectPropagandaCheckbox.checked;
 
         analysisResultsDiv.innerHTML = '<p>Results will appear here.</p>'; // Reset results
         errorMessageP.textContent = '';
@@ -385,6 +393,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!settings.apiKey) {
             errorMessageP.textContent = 'API Key is not set. Please configure it in the Settings page.';
+            errorMessageP.style.display = 'block';
+            return;
+        }
+
+        if (!detectFallacies && !detectBiases && !detectPropaganda) {
+            errorMessageP.textContent = 'Please select at least one analysis option (Fallacies, Biases, or Propaganda).';
             errorMessageP.style.display = 'block';
             return;
         }
@@ -477,44 +491,87 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingIndicator.style.display = 'block';
         analyzeButton.disabled = true;
 
-        let systemPrompt = `You are an expert in logical fallacies, critical thinking, and debate analysis.
-Analyze the provided text for any logical fallacies, factual inaccuracies, or areas of weak reasoning.
+        let fallaciesListContent = '';
+        if (detectFallacies) {
+            try {
+                const response = await fetch('resources/fallacies.txt');
+                if (response.ok) {
+                    fallaciesListContent = await response.text();
+                } else {
+                    console.warn('Could not load resources/fallacies.txt. Proceeding without it.');
+                    errorMessageP.textContent = 'Warning: Could not load fallacy list from resources/fallacies.txt. Analysis will proceed without it.';
+                    errorMessageP.style.display = 'block'; // Show a non-blocking warning
+                    // Do not clear this warning immediately, let it stay until next action or success
+                }
+            } catch (error) {
+                console.warn('Error fetching resources/fallacies.txt:', error);
+                errorMessageP.textContent = `Warning: Error fetching fallacy list (resources/fallacies.txt): ${error.message}. Analysis will proceed without it.`;
+                errorMessageP.style.display = 'block'; // Show a non-blocking warning
+            }
+        }
+        
+        let systemPrompt = `You are an expert in critical thinking and textual analysis.
+Analyze the provided text. Your task is to identify and mark up the following issues:`;
+
+        if (detectFallacies) {
+            systemPrompt += `\n- Logical Fallacies`;
+        }
+        if (detectBiases) {
+            systemPrompt += `\n- Cognitive Biases`;
+        }
+        if (detectPropaganda) {
+            systemPrompt += `\n- Propaganda Techniques`;
+        }
+
+        systemPrompt += `
 
 ${textImageBase64 ? 'The user has provided an image containing text. First, extract and transcribe ALL text from the image accurately, then analyze it.' : ''}
 
 IMPORTANT GUIDELINES:
-1. Consider established, verifiable facts from your knowledge base. Do NOT flag well-established facts as fallacies like "begging the question" or "circular reasoning" when they are used as premises.
+1. Consider established, verifiable facts from your knowledge base. Do NOT flag well-established facts as issues when they are used as premises.
 2. Examples of established facts that should NOT be flagged: "Biden won the 2020 election", "Climate change is real", "The Earth is round", "COVID-19 is caused by a virus", etc.
-3. Only flag logical fallacies in the REASONING and ARGUMENTATION, not in the statement of widely accepted facts.
-4. Focus on actual logical errors, invalid inferences, and problematic reasoning patterns.
+3. Only flag issues in the REASONING, ARGUMENTATION, or PRESENTATION, not in the statement of widely accepted facts.
+4. Focus on actual logical errors, invalid inferences, problematic reasoning patterns, biased language, or manipulative techniques.
 
-You must return the COMPLETE, ENTIRE original text with fallacies marked up in XML tags. Do not summarize, paraphrase, or shorten any part of the text.
+You must return the COMPLETE, ENTIRE original text with identified issues marked up in XML tags. Do not summarize, paraphrase, or shorten any part of the text.
 
 For each identified issue, wrap ONLY the problematic portion in XML tags with this format:
-<fallacy type="[fallacy_name]" explanation="[brief explanation of why this is problematic]">[the exact problematic text]</fallacy>
+<fallacy type="[Category: Specific Name]" explanation="[brief explanation of why this is problematic]">[the exact problematic text]</fallacy>
+
+Use the following categories for the 'type' attribute:
+- For Logical Fallacies: "Logical Fallacy: [Name of Fallacy]" (e.g., "Logical Fallacy: Ad Hominem")
+- For Cognitive Biases: "Cognitive Bias: [Name of Bias]" (e.g., "Cognitive Bias: Confirmation Bias")
+- For Propaganda Techniques: "Propaganda Technique: [Name of Technique]" (e.g., "Propaganda Technique: Bandwagon")
 
 Examples:
 - Original: "You're clearly an idiot, so your argument is wrong."
-- Marked up: "<fallacy type="Ad Hominem" explanation="Attacking the person rather than addressing their argument">You're clearly an idiot</fallacy>, so your argument is wrong."
+- Marked up: "<fallacy type="Logical Fallacy: Ad Hominem" explanation="Attacking the person rather than addressing their argument">You're clearly an idiot</fallacy>, so your argument is wrong."
 
-- Original: "So you think we should just let criminals run free?"
-- Marked up: "<fallacy type="Straw Man" explanation="Misrepresenting the opponent's position to make it easier to attack">So you think we should just let criminals run free?</fallacy>"
+- Original: "Everyone is buying this new phone, so it must be the best."
+- Marked up: "<fallacy type="Propaganda Technique: Bandwagon" explanation="Appealing to popularity rather than intrinsic merit">Everyone is buying this new phone</fallacy>, so it must be the best."
 
-- DO NOT FLAG: "Since Biden won the 2020 election, he is the legitimate president." (This is a valid premise based on established fact)
-- DO FLAG: "Since I'm obviously right about everything, my argument must be correct." (This is circular reasoning)
+Return the complete original text with issues wrapped in XML tags. Preserve all formatting, punctuation, and structure. If there are no issues of the selected types, return the original text exactly as provided.`;
 
-Return the complete original text with fallacies wrapped in XML tags. Preserve all formatting, punctuation, and structure. If there are no fallacies, return the original text exactly as provided.`;
+        if (detectFallacies && fallaciesListContent) {
+            systemPrompt += `
 
-        if (shouldSuggestImprovements) {
+Here is a list of common logical fallacies for your reference. Use this to help identify fallacies:
+--- FALLACY LIST START ---
+${fallaciesListContent}
+--- FALLACY LIST END ---`;
+        }
+        
+        // If any detection is active, suggest improvements and revised text
+        if (detectFallacies || detectBiases || detectPropaganda) {
             systemPrompt += `
 
 ADDITIONAL TASK: After the marked-up text, add TWO sections:
 
 1. "SUGGESTED IMPROVEMENTS:" with specific suggestions for how to improve the argument. Focus on:
-   - Replacing fallacious reasoning with stronger logical arguments
-   - Adding evidence or examples where claims are unsupported
-   - Improving clarity and structure
-   - Addressing potential counterarguments
+   - Replacing fallacious reasoning, biased statements, or manipulative language with stronger logical arguments and neutral presentation.
+   - Adding evidence or examples where claims are unsupported.
+   - Improving clarity and structure.
+   - Addressing potential counterarguments.
    Format improvements as a numbered list with clear, actionable suggestions.
 
 2. "REVISED TEXT:" with a complete rewrite of the original text that addresses the identified issues. Use diff-style formatting:
@@ -522,7 +579,7 @@ ADDITIONAL TASK: After the marked-up text, add TWO sections:
    - Wrap added text in <added>new text to be added</added> tags
    - Keep unchanged text as-is
    
-   Example format:
+   Example format for REVISED TEXT:
    Original: "You're clearly wrong because everyone knows that."
    Revised: "<removed>You're clearly wrong because everyone knows that.</removed><added>I respectfully disagree with your position. According to recent studies by [specific source], the evidence suggests that [specific evidence].</added>"`;
         }
