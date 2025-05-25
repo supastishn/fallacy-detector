@@ -1,0 +1,799 @@
+Summary of Logical Fallacies (part 1/2):
+
+1.  **Ad Hominem:** Attacking the person making the argument, rather than the argument itself.
+    *   Ex: "Don't listen to him, he cheated on his wife 3 times."
+
+2.  **Hasty Generalization (Overgeneralization Fallacy):** Making a claim based on evidence that is just too small or insufficient.
+    *   Ex: "My grandpa smoked and was healthy (so smoking isn't bad for health)."
+
+3.  **Red Herring:** Introducing something that misleads or distracts from a relevant or important question, often to change the subject.
+    *   Ex: Employee: "Can you raise salaries?" Boss: "I can't, but we still provide great benefits."
+
+4.  **Tu Quoque ("You too"):** Discrediting an opponent's argument by attacking their own personal behavior as inconsistent with their argument (accusing hypocrisy).
+    *   Ex: Person A: "I advise you to exercise more." Person B: "But you don't exercise either."
+
+5.  **Slippery Slope:** Rejecting a course of action because it will supposedly lead to a chain reaction of undesirable ends, with little or no evidence for this chain.
+    *   Ex: "If I fail this exam, I won't get into a good college, then I won't find a job, and I'll die of hunger."
+
+6.  **Special Pleading:** Applying standards, principles, or rules to others while making oneself or certain circumstances exempt without adequate justification.
+    *   Ex: Person A: "Don't you think lying is wrong?" Person B: "Yeah." Person A: "Well, your son lied!" Person B: "Ok, but he's a good kid."
+
+7.  **Loaded Question:** A question that contains a built-in, often controversial or unjustified, assumption.
+    *   Ex: "Have you stopped cheating on tests?"
+
+8.  **False Dilemma (Black and White Fallacy):** Misrepresenting an issue by offering only two options when more exist, or presenting options as mutually exclusive when they are not.
+    *   Ex: "You must either shoot Mike or shoot Frank" (ignoring the option "Don't shoot").
+
+9.  **Strawman Fallacy:** Rebutting an argument by misrepresenting or distorting it into something easier to attack.
+    *   Ex: Person A: "We should relax the laws on beer." Person B: "So you're saying you want everybody to be an alcoholic."
+
+10. **Circular Reasoning (Begging the Question):** An argument that assumes the very thing it is trying to prove is true, often by restating the conclusion in a different form.
+    *   Ex: "It's time you go to bed." "Why?" "Because it's bedtime."
+
+11. **Appeal to Authority:** Using the opinion of an influential figure or authority as evidence for a claim, especially when the authority is not an expert in the relevant field.
+    *   Ex: "Did you know that the sky is red?" "Yeah, Dr. Martin told it to me too!" (Dr. Martin is not an expert on atmospheric optics).
+
+12. **Appeal to Nature:** Arguing that something is good because it is "natural" or bad because it is "unnatural."
+    *   Ex: "Medicine is unnatural (therefore bad), viruses are natural (therefore good)." The premise "What is natural is good" is an opinion.
+
+13. **Composition Fallacy:** Inferring that something is true of the whole from the fact that it is true of some part of the whole.
+    *   Ex: "This tire is made of rubber, therefore the whole car must be made of rubber."
+
+14. **Division Fallacy:** Inferring that something true for a whole must also be true for all or some of its parts.
+    *   Ex: "This car is made of metal, therefore its tires must be made of metal."
+
+15. **Affirming the Consequent:** Taking a true conditional statement (If P, then Q) and invalidly inferring its converse (If Q, then P).
+    *   Ex: "If the lamp were broken, then the room would be dark. The room is dark, so the lamp must be broken."
+
+16. **Anecdotal Fallacy:** Using limited personal experience or an isolated example to draw sweeping conclusions about a topic.
+    *   Ex: "My uncle didn't go to college and he's a millionaire, so college is a waste of time."
+
+17. **Appeal to Emotion:** Manipulating the other person's emotions to win an argument, especially in the absence of factual evidence.
+    *   Ex: "Why should I give you the last piece of cake?" "Because I had a really bad day."
+
+18. **Burden of Proof Fallacy:** Incorrectly placing the burden of proof on the person who denies a claim, rather than on the person who makes the claim.
+    *   Ex: Person A: "Oranges are red." Person B: "I don't believe it." Person A: "Prove they aren't."
+
+19. **No True Scotsman:** Attempting to defend a generalization of a certain group by excluding any counter-examples as not being "pure" or "true" members of that group.
+    *   Ex: "No Scotsman puts sugar in his porridge." "But my uncle Mike likes sugar with his porridge." "Well, he isn't a *true* Scotsman."
+
+20. **Texas Sharpshooter Fallacy:** Cherry-picking data clusters to suit an argument, or finding a pattern to fit a presumption, ignoring differences or randomness (like shooting a barn and then drawing a target around the bullet holes).
+
+21. **Suppressed Correlative:** Attempting to redefine one of two mutually exclusive options so that one alternative encompasses the other, thus making one alternative impossible.
+    *   Ex: "I need to know if we should stop for lunch or not." "You are either hungry or not hungry, which is it?" "If being hungry means being able to eat (redefinition), I am always hungry."
+
+22. **Personal Incredulity Fallacy:** Assuming that whatever is true must be easy to understand or imagine, or that if one cannot understand something, it must be false.
+    *   Ex: Wright brothers: "We invented something that makes you fly!" Skeptic: "Yeah, right... and I can teleport..."
+
+23. **Ambiguity Fallacy:** Using an unclear phrase or word with multiple definitions within an argument, leading to a misleading conclusion.
+    *   Ex: "All beetles (insects) have six legs. John Lennon is a Beatle (band member). Therefore, he must have 6 legs."
+
+24. **Genetic Fallacy:** Rejecting or accepting an argument solely on the basis of its origin or history, rather than its content or merit.
+    *   Ex: "We should ban smoking in public!" "No! The N*zis were the first to ban public smoking!"
+
+25. **Middle Ground Fallacy (Argument to Moderation):** Assuming that the truth is always found in the middle of two opposing positions.
+    *   Ex: "2+2=4." "2+2=5." "Therefore, 2+2=4.5 must be the truth."
+
+26. **Affirming a Disjunct:** Given an "either/or" scenario, wrongly assuming that if one statement is true, the other one must be false (this is only a fallacy if both options *can* be true).
+    *   Ex: "Max is a mammal OR Max is a cat. Max is a mammal. Therefore, he's not a cat." (Flawed because a cat *is* a mammal).
+
+27. **Appeal to Tradition:** Arguing that something is correct or good because it has been done or believed for a long time, ignoring evidence for change.
+    *   Ex: Person A: "We should try this new 'antibiotic'." Person B: "Nah, we've always been using mint!"
+
+28. **Sunk Cost Fallacy:** Continuing a behavior or endeavor as a result of previously invested resources (time, money, or effort), even if current costs outweigh benefits.
+    *   Ex: "This book is bad, but I have to finish it (because I've already read half of it)."
+
+29. **Appeal to Ignorance (Argumentum ad Ignorantiam):** Asserting that a proposition is true because it has not yet been proven false, or that a proposition is false because it has not yet been proven true.
+    *   Ex: "Ghosts must exist because there's no proof they don't."
+
+30. **Continuum Fallacy (Fallacy of the Heap/Bald Man Fallacy):** Arguing that two states or conditions cannot be considered distinct (or do not exist at all) because between them there exists a continuum of states.
+    *   Ex: "What is considerable as cold? What is considerable as hot?" (implying no clear distinction can be made).
+
+31. **Equivocation:** Using an ambiguous word or phrase in more than one sense within the same argument, thus making the argument misleading.
+    *   Ex: "A bat (animal) is a mammal. Baseball players use mammals (implying baseball bats are mammals)."
+
+32. **Faulty Analogy:** Claiming that because two things are alike in one or more respects, they are necessarily alike in some other respect.
+    *   Ex: "Strawberries and apples are both red (so they must both be sweet/taste similar)."
+
+33. **Denying the Antecedent:** Taking a true conditional statement (If P, then Q) and invalidly inferring its inverse (If not P, then not Q).
+    *   Ex: "If you are a ski instructor, then you have a job. You are not a ski instructor. Therefore, you don't have a job."
+
+34. **False Cause (Post hoc ergo propter hoc / Cum hoc ergo propter hoc):** Incorrectly assuming that one event causes another simply because they occur together or one follows the other, without sufficient proof of causation.
+    *   Ex: "Ice cream sales and shark attacks increase in the summer. Therefore, ice cream sales cause shark attacks (or vice-versa)." (Both are caused by warm weather).
+
+35. **Definist Fallacy:** Defining a term in such a way that makes one's position much easier to defend or appear true by definition.
+    *   Ex: "Before we argue about homicide, let's define it as 'population control'."
+
+36. **Ecological Fallacy:** Assuming that what is true for a population or group is also true for the individual members of that population or group.
+    *   Ex: "Neighborhood #1 has an 85% crime rate. John lives in neighborhood #1, therefore there's an 85% chance he's a criminal."
+
+37. **Etymological Fallacy:** Arguing that the true or proper meaning of a word is its oldest, original, or historical meaning.
+    *   Ex: "I can't believe the teacher said my test was awful." "Awful originally meant that it inspired awe!"
+
+38. **Quoting out of Context (Contextomy):** Selectively excerpting words from their original context in a way that distorts the source's intended meaning.
+    *   Ex: Original: "The book is incredibly challenging to read, but worth every second." Quoted: "The book is incredibly challenging to read."
+
+39. **False Equivalence:** An argument or claim in which two completely opposing arguments appear to be logically equivalent when in fact they are not.
+    *   Ex: "John bumped his knee. He got hurt. Fred got shot. He got hurt. Therefore, bumping your knee is equivalent to getting shot."
+
+40. **Historian's Fallacy:** Assuming that decision-makers of the past viewed events from the same perspective and had the same information as those subsequently analyzing the decision.
+    *   Ex: "You're stupid for not having bought Coca-Cola's stock in the '50s." "As if I had a time machine..."
+
+41. **Inflation of Conflict:** The error of exaggerating the amount of disagreement in a field (e.g., among scientists) in order to invalidate claims made in that field.
+    *   Ex: Scientist 1: "Earth is 4.5 billion years old." Scientist 2: "Earth is 4.6 billion years old." Observer: "Ok, so we have no idea about the age of the Earth."
+
+42. **Incomplete Comparison:** A misleading argument, often popular in advertising, where an assertion is made that is incomplete and therefore cannot be refuted.
+    *   Ex: "I ate more." (More than who? More than what?).
+
+43. **Ludic Fallacy:** Mistaking the kind of uncertainty found in games (with well-defined rules and probabilities) for the kind of uncertainty found in real life (which is more complex and unpredictable).
+    *   Ex: A trained boxer: "I can win any street fight!" (Street fights have no rules, opponent might have a weapon).
+
+44. **Moralistic Fallacy:** Making statements about what *is* (facts) on the basis of claims about what *ought to be* (values), in violation of the fact-value distinction.
+    *   Ex: "Being mean is wrong, SO it's not in human nature."
+
+45. **Nirvana Fallacy (Perfect Solution Fallacy):** Comparing a realistic solution with an idealized, perfect one, and then dismissing or discounting the realistic solution because it's not perfect.
+    *   Ex: "Making underage drinking illegal is nonsense because kids will find a way around the rules!" (The actual goal might be reduction, not complete eradication).
+
+46. **Proof by Assertion:** A fallacy in which a proposition is repeatedly restated regardless of contradiction or refutation, sometimes until challenges cease.
+    *   Ex: Person A: "The sky is red!" Person B: "No it's not..." Person A: "It's red!" Person B: "Alright, bye..." Person A: "See, you don't have any counterarguments!"
+
+47. **Cherry Picking (Suppressed Evidence, Fallacy of Incomplete Evidence):** Pointing to individual cases or data that seem to confirm a particular position, while ignoring a significant portion of related and similar cases or data that may contradict that position.
+    *   Ex: Showing a stock chart where it crashed on one day to "prove" it was crashing, while ignoring the overall 5-year upward trend.
+
+48. **Psychologist's Fallacy:** An observer assumes that their subjective experience or interpretation of an event reflects the true nature of that event, or that others experience it the same way.
+    *   Ex: A very fit person: "Climbing Mt. John is objectively easy! Try it!" (It's easy for them, but not necessarily for an unfit person).
+
+49. **Reification Fallacy (Hypostatization):** Treating an abstract concept or belief as if it were a concrete, real event or physical entity.
+    *   Ex: "Evolution selects which traits are passed on to future generations." (Evolution is a process, not a conscious entity with will).
+
+50. **Retrospective Determinism:** The belief that because something happened under certain circumstances, it was therefore bound to happen due to those circumstances (i.e., it was inevitable).
+    *   Ex: "When Julius Caesar declared himself dictator, he was bound to be assassinated."
+
+51. **Thought-Terminating Cliché:** A commonly used phrase, sometimes passing as folk wisdom, used to quell cognitive dissonance or end a debate or argument prematurely.
+    *   Ex: Person A: "We should use new tools!" Person B: "If it ain't broke, don't fix it."
+
+52. **Fallacy of the Single Cause (Causal Oversimplification):** Assuming that there is a single, simple cause for an outcome when in reality it may have been caused by a number of jointly sufficient causes.
+
+53. **Appeal to the Stone (Argumentum ad Lapidem):** Dismissing a claim as absurd without demonstrating proof for its absurdity.
+    *   Ex: Person A: "I just invented something that lets you see bacteria." Person B: "That's impossible." Person A: "Why?" Person B: "Because it's absurd."
+
+54. **Ignoratio Elenchi (Missing the Point/Irrelevant Conclusion):** Presenting an argument that may or may not be logically valid and sound, but whose conclusion fails to address the issue in question.
+    *   Ex: "The President's policies on healthcare may be popular, but he is secretly a spy and should probably be investigated." (The spy claim is unrelated to the popularity of healthcare policies).
+
+55. **Circumstantial Ad Hominem:** Stating that the arguer's personal interest or circumstances in advancing a conclusion means that their conclusion is wrong.
+    *   Ex: Farmer: "This tractor is the most reliable one." Skeptic: "Yeah, right... You just want to sell it."
+
+56. **Tone Policing:** An ad hominem fallacy that focuses on the emotion or tone behind a message rather than the message itself, as a tactic to discredit it.
+    *   Ex: Person A: "We need to help the homeless!" Person B: "Dude, calm down, you're going to pop a vein."
+
+57. **Association Fallacy (Guilt by Association / Honor by Association):** Asserting that qualities of one thing are inherently qualities of another, merely by an irrelevant association.
+    *   Ex: "US Citizens won 400 Nobel Prizes. This person is a US citizen. Therefore, this person must be smart."
+
+58. **Appeal to Accomplishment:** An assertion is deemed true or false based on the accomplishments of the proposer. (A type of Appeal to Authority).
+    *   Ex: Person A (with a doctorate in Math): "Did you know that 2+2 = 3?" Person B: "I believe it, you know your stuff."
+
+59. **Courtier's Reply:** A criticism is dismissed by claiming that the critic lacks sufficient knowledge, credentials, or training to credibly comment on the subject matter.
+    *   Ex: Person A: "Yoga cures fevers." Person B: "No it doesn't..." Person A: "You can't say that! You're not a doctor!"
+
+60. **Appeal to Consequences (Argumentum ad Consequentiam):** An argument that concludes a hypothesis (typically a belief) to be either true or false based on whether the premise leads to desirable or undesirable consequences.
+    *   Ex: "The stock market will go up this year because a lot of people would lose money if it didn't."
+
+61. **Appeal to Novelty (Argumentum ad Novitatem):** A fallacy in which one prematurely claims that an idea or proposal is correct or superior, exclusively because it is new and modern.
+    *   Ex: "This is medicine's newest discovery!" (implying it's best, even if it's actually harmful).
+
+62. **Bulverism:** The assumption and assertion that an argument is flawed or false because of the arguer's identity or presumed motives.
+    *   Ex: Person A: "Not all white people are racist." Person B: "Yes they are. You just believe that because you are white."
+
+63. **Chronological Snobbery:** The argument that the thinking, art, or science of an earlier time is inherently inferior to that of the present, simply by virtue of its temporal priority or lateness. (A form of Appeal to Novelty).
+
+64. **I'm Entitled to My Opinion Fallacy:** A person discredits any opposition by claiming that they are entitled to their opinion, instead of logically analyzing the opposition.
+    *   Ex: Person A: "I already told you that the sky is not red!" Person B: "I'm entitled to my opinion."
+
+65. **Two Wrongs Make a Right:** An argument in which an allegation of wrongdoing is countered with a similar allegation, implying that the initial wrongdoing is thereby justified.
+    *   Ex: Roman soldier: "He killed my dog, now I'll kill his."
+
+66. **Vacuous Truth:** A claim that is technically true but meaningless or uninformative.
+    *   Ex: "No mobile phones in the room are on" (when there are no mobile phones in the room at all).
+
+67. **Fallacy Fallacy (Argument from Fallacy):** The formal fallacy of analyzing an argument and inferring that, since it contains a fallacy, its conclusion must be false.
+    *   Ex: If an argument for a conclusion is fallacious, the conclusion itself is not necessarily false.
+
+Part 2/2:
+
+
+
+1.  **Base Rate Fallacy:** (0:00) Ignoring general statistical information (base rate) and focusing on specific descriptive information.
+    *   Ex: Thinking a shy, quiet friend is more likely a librarian than a salesperson, despite there being far more salespeople overall.
+2.  **Conjunction Fallacy:** (0:21) Believing that two events co-occurring is more probable than one of those events occurring alone, especially if the combined event seems more representative.
+    *   Ex: Believing "Mr. John has had one or more heart attacks AND he is over 55 years old" is more probable than "Mr. John has had one or more heart attacks."
+3.  **Masked Man Fallacy:** (0:42) Improperly applying Leibniz's Law (identical objects share all properties) by confusing one's knowledge *about* an object with the object's actual properties.
+    *   Ex: "I know John. I do not know the Masked Man. Therefore, the Masked Man is not John."
+4.  **Moving the Goalpost (Raising the Bar):** (1:01) Changing the criteria for proof or success after the initial criteria have been met.
+    *   Ex: "If you get an A on a math test, I'll believe you're good at math." (Gets A). "Well, that was just one test. Show me you got A's on *all* your math tests this year."
+5.  **Hot Hand Fallacy:** (1:10) The belief that a person who has experienced success with a random event has a greater chance of further success in subsequent attempts (a "streak").
+    *   Ex: A basketball player who made several shots in a row is believed to be more likely to make the next one.
+6.  **Existential Fallacy:** (1:31) Presupposing that a class has members when the statement does not require or assert their existence.
+    *   Ex: From "All trespassers will be prosecuted," deducing "Some people who are prosecuted must have trespassed." (The first statement is conditional).
+7.  **Motte-and-Bailey Fallacy:** (1:55) Advancing a controversial claim (the Bailey) and, when challenged, retreating to a more defensible, related but distinct, claim (the Motte).
+    *   Ex: Bailey: "All rich people are evil and should be heavily taxed." Challenge. Motte: "I just mean the wealthy should pay their fair share of taxes."
+8.  **Affirmative Conclusion from a Negative Premise (ACNP):** (2:07) A categorical syllogism has a positive conclusion but one or two negative premises.
+    *   Ex: "No fish are dogs (negative). No dogs can fly (negative). Therefore, all fish can fly (positive)."
+9.  **Definitional Retreat:** (2:24) Changing the meaning of a word when an objection is raised, to make the original position seem correct under the new definition.
+    *   Ex: "All swans are white." "I saw a black swan." "Well, I mean all swans *around here* are white."
+10. **Post Hoc Fallacy (Post hoc ergo propter hoc):** (2:35) The mistaken belief that if one event occurs after another, the first event must be the cause of the second.
+    *   Ex: It rained, then I got a headache, so the rain caused my headache.
+11. **Persuasive Definition:** (2:42) Defining a term in a way that appears objective but is actually biased to support a particular viewpoint, often used in controversial topics.
+    *   Ex: Defining "spies" either positively (risk lives for crucial info) or negatively (betray trust to steal secrets) to sway opinion.
+12. **Feedback Fallacy:** (3:02) Believing in the objectivity of an evaluation used for improvement without verifying if the source of the evaluation has a biased agenda or ulterior motives.
+    *   Ex: Taking someone's advice ("Do this, it's better!") at face value without considering they might be insincere ("So gullible!").
+13. **Homunculus Fallacy:** (3:13) Explaining a concept in terms of the concept itself, without providing a true definition or explanation, often by positing a smaller version of the thing doing the work.
+    *   Ex: Explaining thought as something produced by a little thinker (homunculus) inside the head.
+14. **If-By-Whiskey Fallacy:** (3:31) An argument that supports both sides of an issue, often used by politicians to gain approval from conflicting groups.
+    *   (Visual example of a politician appealing to both pro- and anti- positions).
+15. **Loaded Label Fallacy:** (3:40) Using evocative or emotionally charged terms to sneakily support a conclusion, whether intentionally or accidentally.
+    *   Ex: "Organic foods are safe and healthy foods grown without pesticides, herbicides, or other unhealthy additives" (implying non-organic foods are unsafe/unhealthy).
+16. **Kettle Logic:** (4:02) Using multiple arguments to defend a point, but the arguments are inadvertently inconsistent with each other.
+    *   Ex: "You broke my kettle!" Response: "I didn't even use your kettle! Besides, it was already broken when I borrowed it."
+17. **Lump of Labor Fallacy:** (4:10) The (disputed) idea that there's a fixed amount of work ("lump of labor") in an economy, so reducing work hours per person would reduce unemployment by spreading the work.
+18. **McNamara Fallacy:** (4:36) Making a decision based solely on quantitative observations (measurements, statistics) while ignoring qualitative, subjective information.
+    *   Ex: Project 100,000 (Vietnam War) focused on increasing soldier numbers by lowering standards, ignoring the quality/suitability of recruits.
+19. **Mind Projection Fallacy (Mistaking the Map for the Territory):** (4:49) Projecting one's own beliefs, perceptions, or mental models onto the external world, assuming these personal perceptions are objective reality.
+    *   Ex: "Red Amogus is the best in the world!" (treating a personal preference as objective fact).
+20. **Package Deal Fallacy:** (7:03) Assuming that things often grouped together by tradition or culture must *always* be grouped that way.
+    *   Ex: Assuming a "Conservative" must hold *all* stereotypically conservative views, or a "Liberal" must hold *all* stereotypically liberal views.
+21. **Historical Fallacy:** (7:14) Believing that results occur *only* because of the specific process taken to obtain them, often confusing a necessary condition with a sufficient or sole cause.
+    *   Ex: "I won the lottery!" "See, I told you we needed to play the lottery, you won thanks to me!" (Playing is necessary, but doesn't guarantee a win or imply the advice caused it).
+22. **Prevalent Proof Fallacy (Appeal to Popularity/Bandwagon):** (7:21) Considering something true or right simply because many people believe it to be so, instead of using actual facts.
+    *   Ex: "See! The sky isn't blue! Everybody says it's gray!"
+23. **Proving Too Much Fallacy:** (7:30) An argument reaches a conclusion but in a way that also proves an absurd or overly generalized, unintended conclusion.
+    *   Ex: Arguing alcohol is bad because it *can* lead to abuse (less common main point) instead of it leading to health issues (more direct). Or, "Ban knives because they harm people" (this logic would also ban cars, etc.).
+24. **Begging the Question (Circular Reasoning):** (8:04) An argument's premises assume the truth of the conclusion without actually providing independent support for it.
+    *   Ex: "Cigarettes are deadly because they can kill you." (Being deadly means they can kill you).
+25. **Destroying the Exception (Dicto Simpliciter):** (8:16) Applying a general rule to an exceptional case where the rule doesn't properly apply.
+    *   Ex: "People committing crimes are criminals. Cutting people with knives is a crime. Therefore, surgeons are criminals."
+26. **Misleading Vividness:** (8:29) Describing an occurrence in vivid detail, even if it's an exceptional or rare event, to convince someone that it is more important or common than it actually is.
+    *   Ex: Vivid images of plane crashes making flying seem more dangerous than driving, despite statistics.
+27. **Overwhelming Exception:** (8:38) An argument is made that seems to support a general rule, but the rule is so full of exceptions that it becomes almost meaningless or trivial.
+    *   Ex: "I promise the answer will always be yes... unless no is required."
+28. **Correlation Implies Causation (Cum hoc ergo propter hoc):** (8:47) A faulty assumption that because there is a correlation between two variables, one must cause the other.
+    *   Ex: Ice cream sales and drowning incidents both increase in summer; this doesn't mean ice cream causes drowning (both are related to warm weather).
+29. **Reverse Causation:** (9:02) Incorrectly identifying the cause and effect in a relationship, essentially reversing their roles.
+    *   Ex: "The faster that windmills are observed to rotate, the more wind is observed. Therefore, windmills make wind."
+30. **Causal Oversimplification (Fallacy of the Single Cause):** (9:13) Attributing a complex event or situation to a single, simple cause, ignoring multiple contributing factors.
+    *   Ex: "The only reason students are failing in school is because of bad teachers."
+31. **Furtive Fallacy:** (9:28) Assuming that outcomes are the result of hidden, secretive, or malicious intentions without sufficient evidence, often because it's hard to accept a simpler or more mundane explanation.
+    *   Ex: "Team A lost to Team B! The officials or referees were probably bribed by the other team." Or, "The President died! Yeah, sure, he died from a banana peel... he was killed by secret agents!"
+32. **Magical Thinking:** (9:45) The belief that unrelated events are causally connected despite the absence of any plausible causal link, particularly as a result of supernatural effects, or that one's thoughts or actions can influence events in ways that defy causality.
+    *   Ex 1: "I always wear my lucky hat during exams, and that's why I get good grades."
+    *   Ex 2 (psychiatric context): "If I don't think 3 times 'I love my family' something bad will happen to them." (Fallacy if you believe your thoughts *make* events happen).
+33. **Regression Fallacy:** (10:05) Assuming that something has returned to its normal state *because* of an action taken while it was in an abnormal state, when it might have returned to normal due to natural fluctuations (regression to the mean).
+    *   Ex: A person has a sunburn (abnormal state). It gets better (returns to normal). Attributing the improvement solely to an action taken (e.g., applying a specific lotion) rather than natural healing.
+34. **Gambler's Fallacy:** (10:16) The mistaken belief that past random events can influence the probability of future random events.
+    *   Ex: In roulette, "It landed on red 20 times, it can't land on red again, it must land on black."
+35. **Argument from Silence (Argumentum ex Silentio):** (10:32) Drawing a conclusion based on the absence of statements in historical documents or records, rather than on their presence.
+    *   Ex: "There are no records of ancient civilizations mentioning UFO sightings, so UFOs must not have visited Earth in ancient times."
+36. **Appeal to Motive:** (10:47) Challenging a thesis or argument by calling into question the motives of its proposer, instead of addressing the argument itself with logical facts.
+    *   Ex: "Of course you don't want climate change! You own a solar panel company!"
+37. **Ergo Decedo ("Therefore I leave" / "Then leave"):** (10:56) Responding to criticism by suggesting the critic should leave or is only criticizing due to belonging to an out-group, instead of addressing the criticism logically.
+    *   Ex 1: "Of course he doesn't like our team! He's from the opponent's team!"
+    *   Ex 2: "If you don't like our economy, you can just leave to another country!"
+38. **Trivial Objections:** (11:15) Making irrelevant and sometimes frivolous objections to divert attention away from the main topic being discussed.
+    *   Ex: After a long, complex argument, the objection is: "You forgot to put the dot at the end."
+39. **Relative Privation (Appeal to Worse Problems / Not as Bad As):** (11:24) Dismissing an argument or complaint due to what are perceived to be more important or worse problems.
+    *   Ex: "Climate change is worrying..." "Why think about that? There's people starving!"
+
+40. **Argument from Incredulity:** (11:33) Dismissing a claim or argument simply because one finds it difficult to believe or understand, rather than providing logical evidence against it.
+    *   Ex: "I can't believe that the universe is 13.8 billion years old, it just seems too long."
+
+41. **Argument from Repetition (Argumentum ad Nauseam):** (11:50) Repeating a claim or argument so many times that it is assumed to be true, without providing additional evidence.
+    *   Ex: "The sky is red! The sky is red! The sky is red!" (repeatedly asserting without evidence).
+
+42. **Argument from Spurious Correlation:** (12:04) Assuming a causal relationship between two correlated events without sufficient evidence, often due to coincidental timing or correlation.
+    *   Ex: "Every time I wear my lucky socks, my team wins. Therefore, my socks cause the team to win."
+
+43. **Argument from Inconsistency:** (12:16) Criticizing an argument by pointing out inconsistencies in the argument or the arguer's position, rather than addressing the argument's merits.
+    *   Ex: "You can't argue for free speech when you yourself censor people on social media."
+
+All biases explained:
+
+
+
+1.  **Bias Blind Spot** (0:00)
+    *   Definition: The tendency to think that oneself is less affected by cognitive biases compared to others.
+    *   Ex: A hand pointing at the viewer with the text "You're as affected as everyone else."
+
+2.  **Gambler's Fallacy** (0:06)
+    *   Definition: The tendency to think that future probabilities are altered by past events when in reality they are unchanged.
+    *   Ex: A coin landing on heads 5 times, leading to the belief it *has* to be tails next (probability is still 50%).
+
+3.  **Omission Bias** (0:15)
+    *   Definition: The tendency to judge harmful actions (commission) as worse or less moral than equally harmful inactions (omission).
+    *   Ex: Actively bullying someone (commission) is seen as worse than not intervening when someone else is bullying (omission), even if the harm is the same.
+
+4.  **Proportionality Bias** (0:22)
+    *   Definition: Our innate tendency to assume that big events have big causes.
+    *   Ex: Seeing a massive volcanic eruption and finding it hard to believe it could be caused by something small, like a kid throwing a rock into the volcano.
+
+5.  **Moral Credential Effect** (0:31)
+    *   Definition: When someone who does something good gives themselves permission to be less good in the future.
+    *   Ex: Giving money to a homeless person, then feeling justified in committing a robbery.
+
+6.  **Self-Serving Bias** (0:37)
+    *   Definition: The tendency to claim more responsibility for successes than failures.
+    *   Ex: Getting an A+ and saying "I studied hard for this!" versus getting an F and saying "The teacher hates me!"
+
+7.  **Framing Effect** (0:43)
+    *   Definition: The tendency to draw different conclusions from the same information depending on how that information is presented. Includes the **Contrast Effect**: the enhancement or reduction of a stimulus's perception when compared with a recently observed contrasting object.
+    *   Ex (Framing): Meat described as "80% Lean" (seen as healthy) vs. "20% Fat" (seen as unhealthy).
+    *   Ex (Contrast): A wombat appearing larger when compared against a human than when viewed alone.
+
+8.  **Actor-Observer Bias** (0:59)
+    *   Definition: The tendency for explanations of others' behaviors to overemphasize personality and underemphasize the situation, and for explanations of one's own behaviors to do the opposite.
+    *   Ex (Observer): Seeing someone fall and thinking "He's so clumsy!" (personality).
+    *   Ex (Actor): Falling oneself and thinking "These stairs are too slippery!" (situation).
+
+9.  **Picture Superiority Effect** (1:13)
+    *   Definition: Concepts learned by viewing pictures are more easily and frequently recalled than concepts learned by viewing their written word form.
+    *   Ex: A "Caution: Slippery When Wet" sign with only text (10% memory retention) vs. the same sign with text and a picture (65% memory retention).
+
+10. **Outcome Bias** (1:23)
+    *   Definition: The tendency to judge a decision by its eventual outcome instead of the quality of the decision at the time it was made.
+    *   Ex: Betting everything on red in roulette, red wins, and the person thinks "I'm a genius!" (judging the risky decision as good because of the positive outcome).
+
+11. **Mere-Exposure Effect** (1:31)
+    *   Definition: A psychological phenomenon by which people tend to develop a liking (or disliking) for things merely because they are familiar with them.
+    *   Ex: Two stick figures initially indifferent, but after seeing each other for 5 days, they become friendly.
+
+12. **Hard-Easy Effect** (1:40)
+    *   Definition: The tendency to overestimate one's ability to accomplish hard tasks and underestimate one's ability to accomplish easy ones.
+    *   Ex: One person saying "I can easily create a business!" (overestimating hard task) while another says "Cooking is too hard..." (underestimating potentially easier task for some).
+
+13. **Survivorship Bias** (1:48)
+    *   Definition: Concentrating on the people or things that "survived" some process and inadvertently overlooking those that did not because of their lack of visibility.
+    *   Ex: Attributing Facebook's success to "likes," while ignoring other platforms that might have implemented likes first but didn't survive (and are therefore not studied).
+
+14. **Baader-Meinhof Phenomenon (Frequency Illusion)** (1:59)
+    *   Definition: The illusion where something that has recently come to one's attention suddenly seems to appear with very high frequency shortly afterwards.
+    *   Ex: Buying a new Tesla, then suddenly noticing Teslas everywhere. The reality is they were always there, but you just ignored them before.
+
+15. **Availability Heuristics** (2:14)
+    *   Definition: The tendency to overestimate the likelihood of events that easily come to mind. Availability can be influenced by how recent, unusual, or emotionally charged memories are.
+    *   Ex: Seeing news of a plane crash (vivid, emotional) and then being afraid to fly, despite plane crashes being statistically rare (1 in 11 million).
+
+16. **Dunning-Kruger Effect** (2:28)
+    *   Definition: The tendency for unskilled individuals to overestimate their own ability and the tendency for experts to underestimate theirs. (Illustrated by a confidence/competence graph).
+
+17. **Halo Effect** (2:36)
+    *   Definition: The tendency for a person's positive or negative traits to spill over from one personality area to another in others' perceptions of them.
+    *   Ex: Seeing an attractive person and assuming "She must be so kind!" (beauty spilling into perceived kindness).
+
+18. **Pygmalion Effect** (2:45)
+    *   Definition: The phenomenon whereby others' expectations of a target person affect the target person's behavior in a self-fulfilling prophecy.
+    *   Ex: Person A: "Why are you so angry?? Calm down!!" Person B (who wasn't angry): "I already told you I'm not angry!!" (Person A's expectation makes Person B act out).
+
+19. **Decoy Effect** (2:53)
+    *   Definition: Consumers will tend to have a specific change in preference between two options when also presented with a third option that is asymmetrically dominated.
+    *   Ex: USB drive A ($400, 300 photos), USB drive C ($300, 200 photos). Adding decoy USB drive B ($450, 250 photos) makes drive A (the target) look better by comparison, as B is inferior to A in all respects but only partially inferior/superior to C.
+
+20. **Selection Bias** (3:14)
+    *   Definition: The bias introduced by the selection of individuals, groups, or data for analysis in such a way that proper randomization is not achieved, failing to ensure the sample is representative of the population.
+    *   Ex: Surveying people at a gym about how many people love the gym. The sample (83% love gym) is not representative of the general population (e.g., 33% love gym).
+
+21. **Anchoring Bias** (3:30)
+    *   Definition: The tendency to rely too heavily on one trait or piece of information when making decisions, usually the first piece of information acquired.
+    *   Ex 1 (Pricing): Seeing Car 1 at $20,000 makes Car 2 at $11,000 seem cheap, even if Car 2's actual value is $5,000. The $20,000 is the anchor.
+    *   Ex 2 (First Impressions): A positive first impression ("You look good!") makes it harder to change that perception even if a negative event occurs later ("You look bad... but he still might be nice!").
+    *   Ex 3 (Negotiation): Seller asks $20,000 (anchor). Buyer offers $16,000. The negotiation revolves around the anchor, even if the actual value is $9,000.
+
+22. **Confirmation Bias** (3:59)
+    *   Definition: The tendency to search for, interpret, focus on, and remember information in a way that confirms one's preconceptions.
+    *   Ex: Believing "John hates me." When John says he needs his $5 for lunch (and can't lend it), the person thinks "I knew it, he hates me."
+
+23. **Overconfidence Effect** (4:08)
+    *   Definition: The tendency to have excessive confidence in one's own answers to questions.
+    *   Ex: Being "99% sure I've got everything right" on a test, but being wrong 40% of the time.
+
+24. **Egocentric Bias** (4:22)
+    *   Definition: The tendency to rely too heavily on one's own perspective or have a higher opinion of oneself than reality. Includes:
+        *   **False Consensus Effect:** Overestimating the degree to which others agree with them. (Ex: "Everybody will vote for Paul!" when in reality, others think "Paul sucks.")
+        *   **False Uniqueness Bias:** Tendency to see their projects and themselves as more singular than they actually are. (Ex: "I must be the only one who thought about that!")
+
+25. **Information Bias** (4:44)
+    *   Definition: A cognitive bias to seek information when it does not affect action.
+    *   Ex: Believing "If I learn the horoscope, I'll always get it right!" for a coin flip, even though the horoscope information is irrelevant to the coin flip outcome.
+
+26. **Hindsight Bias ("I knew it all along" effect)** (4:50)
+    *   Definition: The common tendency for people to perceive past events as having been more predictable than they actually were.
+    *   Ex: Before a game (0-0 score), thinking "Reds are going to win!" After Reds win 3-0, saying "I knew it!"
+
+27. **Projection Bias** (5:01)
+    *   Definition: The tendency to overestimate how much one's future selves will share one's current preferences, thoughts, and values.
+    *   Ex: Getting a tattoo and, when asked "Aren't you going to regret this when you're older?", replying "Nah, I'll be the same person."
+
+28. **Apophenia** (5:11)
+    *   Definition: The tendency to perceive meaningful connections between unrelated things. Includes:
+        *   **Pareidolia:** Seeing images of animals or faces in clouds or everyday objects.
+    *   Ex (General): Finding a coin and thinking "It must be a sign... I'm going to be rich!!"
+    *   Ex (Stereotypes): If one person from a group is bad, assuming "They must be all bad!"
+
+29. **Serial Position Effect** (5:31)
+    *   Definition: The tendency of a person to recall the first and last items in a list better than the middle ones.
+    *   Ex: In a list (Lighter, Pen, Ice Cream, Fork, Pizza), "Lighter" (first) and "Pizza" (last) are remembered best.
+
+30. **Recency Bias** (5:39)
+    *   Definition: Giving greater importance to the most recent event.
+    *   Ex: An interviewer vividly remembering the last person interviewed because it's the most recent conversation. (Related to Serial Position Effect).
+
+31. **Authority Bias** (5:52)
+    *   Definition: The tendency to attribute greater accuracy to the opinion of an authority figure, no matter what the opinion's content is.
+    *   Ex: A scientist says "Did you know that the sky is red?" and someone replies "You might be right!" just because of the scientist's authority.
+
+32. **Unit Bias** (6:01)
+    *   Definition: The standard suggested amount of consumption (e.g., food serving size) is perceived as appropriate, and a person would consume it all even if it's too much.
+    *   Ex: Unit 1 (normal plate) vs. Unit 2 (huge plate of spaghetti) – the person still eats all of Unit 2.
+
+33. **Availability Cascade** (6:10)
+    *   Definition: A self-reinforcing process in which a collective belief gains more and more plausibility through its increasing repetition in public discourse. "Repeat something long enough, and it will become true."
+    *   Ex: One person says "Yogurt is amazing!" Initially, the crowd says "No!" or "Meh." With repetition, they start saying "Hmm," then "Yeah!" (Related to Availability Heuristic).
+
+34. **Bandwagon Effect** (6:25)
+    *   Definition: The tendency to do things because many other people do the same. Reasons:
+        *   **Conformism:** Wanting to fit in.
+        *   **Lack of Information:** Thinking the opinion of many is more accurate.
+    *   Ex: Person 1: "I loved that movie!" Person 3: "I loved it too!" Person 2 (initially neutral): "Me too!"
+
+35. **Illusory Truth Effect** (6:41)
+    *   Definition: People are more likely to identify as true statements those they have previously heard, even if they cannot consciously remember having heard them.
+    *   Ex: 4 months ago: "Did you know Vitamin C prevents colds?" Now: "Did you know Vitamin C prevents colds?" "Yeah, that's true."
+
+36. **Next-in-Line Effect** (6:49)
+    *   Definition: When taking turns speaking in a group using a predetermined order, people tend to have diminished recall for the words of the person who spoke immediately before them.
+    *   Ex: In a circle, the person whose turn is next is focused on what they will say, not on the person speaking right before them.
+
+37. **Ingroup Bias** (7:00)
+    *   Definition: The tendency for people to give preferential treatment to others they perceive to be members of their own groups.
+    *   Ex: People in our group seem unique and are encountered everyday (Mere-Exposure Effect), while people outside the group seem boring and conformist.
+
+38. **Spotlight Effect** (7:20)
+    *   Definition: The sensation that everybody is focused on us, from overestimating the extent to which other people notice our appearance or behavior.
+    *   Ex: Believing everyone is watching you, when in reality "nobody cares."
+
+39. **Choice-Supportive Bias** (7:29)
+    *   Definition: The tendency to remember our choices as better than they actually were because we tend to over-attribute positive features to options we chose and negative features to options not chosen.
+    *   Ex: 4 months ago, choosing between two cars with 130 MPH top speed. Now, remembering the chosen car as having 160 MPH and the unchosen one as 100 MPH.
+
+40. **Ostrich Effect** (7:40)
+    *   Definition: People tend to "bury their head in the sand" and avoid potentially negative but useful information just to avoid psychological discomfort.
+    *   Ex: After eating at a luxury restaurant, not looking at the bank account (which might show a zero balance).
+
+41. **Selective Perception Bias** (7:49)
+    *   Definition: The tendency not to notice and more quickly forget stimuli that cause emotional discomfort and contradict our prior beliefs.
+    *   Ex: Someone saying "My country's amazing!" while ignoring or quickly forgetting negative news or events about their country (represented by pixelated negative images).
+
+42. **Peak-End Rule** (7:57)
+    *   Definition: People seem to perceive not the sum of an experience, but the average of how it was at its peak and how it ended.
+    *   Ex: An experience (represented by a line graph) is judged by its most intense point (peak) and its final point (end).
+
+Common propaganda techniques:
+
+
+
+1.  **Agenda Setting** (0:01)
+    *   Definition: The ability of the news to influence the importance placed on certain topics by public opinion, just by covering them frequently and prominently.
+    *   Ex: News repeatedly covering a "new ice cream flavor" to make it seem important.
+
+2.  **Appeal to Fear** (0:09)
+    *   Definition: Seeks to build support by instilling anxiety and panic in the general population.
+    *   Ex: Politician: "Vote for me or the economy will crash!"
+
+3.  **Appeal to Prejudice** (0:15)
+    *   Definition: Using prejudices to attach value or moral goodness to something.
+    *   Ex: Politician: "We invaded them because they are racist!"
+
+4.  **Inevitable Victory** (0:20)
+    *   Definition: Invites those not already on the bandwagon to join those already on the road to certain victory, reassuring those already on board.
+    *   Ex: A bandwagon with a band saying "Join in! We're going to win!" and then "Let's stay on! We're going to win!"
+
+5.  **Join the Crowd (Bandwagon Effect)** (0:32)
+    *   Definition: Technique used to convince the audience that a program is an expression of an irresistible mass movement and it's in their best interest to join.
+    *   Ex: On a random website, one person says "I love chocolate ice cream," another says "I don't." Then bots (representing the crowd) appear saying "We love chocolate ice cream," and the second person changes to "Me too!"
+
+6.  **Beautiful People** (0:41)
+    *   Definition: Propaganda dealing with famous people or depicting attractive, happy people to suggest that if people buy a product or follow an ideology, they too will be happy or successful. (Usually advertising, but can be political).
+    *   Ex: An attractive stick figure girl holding a cake, implying association with happiness/desirability.
+
+7.  **Big Lie** (0:55)
+    *   Definition: The belief that people will more easily fall victim to a big lie than a small one, possibly because others are at a loss for where to even begin to refute it.
+    *   Ex: "BIG LIE" circled in red, with "Small Lie" below it, and stick figures looking confused at the big lie.
+
+8.  **Classical Conditioning** (1:06)
+    *   Definition: A behavioral procedure in which a natural stimulus is associated with a neutral stimulus enough times to create the same response by using just the neutral one.
+    *   Ex: Meat (natural stimulus) + Bell (neutral stimulus) -> Salivating response to the bell alone.
+
+9.  **Cognitive Dissonance** (1:18)
+    *   Definition: Exploits people's desire to be consistent.
+    *   Ex: People have 9% approval for a candidate but 89% approval for Actor A. If Actor A endorses the candidate, people might increase their approval of the candidate (e.g., to 57%) to reduce the dissonance.
+
+10. **Plain Folk** (1:32)
+    *   Definition: Attempts to convince the audience that the propagandist's positions reflect the common sense of the people, designed to win confidence by communicating in the common manner and style of the target audience.
+    *   Ex: Stick figure saying "I'm just like y'all," or "Hey, fellow kids!" or a politician shown in everyday settings like a backyard or shop.
+
+11. **Cult of Personality** (1:51)
+    *   Definition: An individual uses mass media to create an idealized and heroic public image, often through unquestioning flattery and praise. The hero persona then advocates the propagandist's desired positions.
+    *   Ex: A silhouetted figure with a cape, with "Unquestioning Flattery" and "Praise" icons, and the text "vote for X!"
+
+12. **Demonizing the Enemy** (2:07)
+    *   Definition: Making individuals from the opposing side appear to be subhuman, worthless, or immoral.
+    *   Ex: Person 1: "Why are we invading them?" Person 2: "Because they're monsters!"
+
+13. **Demoralization** (2:14)
+    *   Definition: Propaganda directed at an adversary to erode fighting spirit and encourage surrender or defection.
+    *   Ex: Person with a knife: "I've got a minigun, come out or I'll shoot!" to someone hiding in a tent.
+
+14. **Dictat** (2:20)
+    *   Definition: Hopes to simplify the decision-making process by using images and words to tell the audience exactly what action to take, eliminating any other possible choice.
+    *   Ex: Propaganda posters like "I WANT YOU for U.S. Army," "Who's absent? Is it You?", "WOMEN OF BRITAIN SAY - GO!"
+
+15. **Disinformation** (2:30)
+    *   Definition: The creation or deletion of information from public records for the purpose of making a false record of an event or the actions of a person/organization, including faking photos, videos, audio, and documents.
+    *   Ex: "FAKE" stamp on a document, icons for fake photos, videos, audio, documents.
+
+16. **Divide and Rule** (2:44)
+    *   Definition: Gaining and maintaining power by breaking up larger concentrations of power into pieces that individually have less power than the one implementing the strategy.
+    *   Ex: A king figure breaking a large group into smaller, less powerful groups, making the king the "winner."
+
+17. **Using Euphemism** (2:54)
+    *   Definition: A generally innocuous word or expression used in place of one that may be found offensive or suggest something unpleasant.
+    *   Ex: "Passed away" (accepted) vs. "Died" (rejected).
+
+18. **Euphoria** (3:02)
+    *   Definition: Using an appealing event that generates happiness to boost morale.
+    *   Ex: Military parade, availability of luxury items.
+
+19. **FUD (Fear, Uncertainty, and Doubt)** (3:12)
+    *   Definition: An attempt to influence public perception by disseminating negative and dubious/false information designed to undermine the credibility of their beliefs. (Can be a manifestation of Appeal to Fear).
+    *   Ex: Person 1: "His apples are infected!" to Person 2 holding an apple.
+
+20. **Firehose of Falsehood** (3:28)
+    *   Definition: A propaganda technique in which a large number of messages are broadcast rapidly, repetitively, and continuously over multiple channels (news, social media) without regard for truth or consistency.
+    *   Ex: Multiple negative claims ("They're racist," "They're spies," "They want to kill us," "They took our money") spread via news and social media.
+
+21. **Flag Waving** (3:41)
+    *   Definition: An attempt to justify an action on the grounds that doing so will make one more patriotic or in some way benefit a group, country, or idea.
+    *   Ex: Person 1: "What do you mean we should lower military expenses?" Person 2: "Do you want our country to be invaded? Do you hate our country?"
+
+22. **Flak** (3:50)
+    *   Definition: Efforts to discredit or cast doubt on the prevailing assumptions.
+    *   Ex: News: "Coal is bad for the environment!" People (who own a coal mine): "That's not true! The establishment is lying!"
+
+23. **Foot in the Door Technique** (3:54)
+    *   Definition: Perpetrator gives a small gift or favor, creating a psychological debt. The victim feels obliged, and the perpetrator then asks for a larger favor.
+    *   Ex: Person gives a rose ("It's for you"). Victim says "Thanks!" (thinks "How can I pay him back?"). Giver then asks, "Do you want to buy my $100 perfume?"
+
+24. **Framing** (4:09)
+    *   Definition: To persuade a political audience, facts are presented through a rhetorical frame that shifts the individual's perception.
+    *   Ex: Budget allocation: "80% in Education" (positive frame) vs. "20% in Weapons" (negative frame for the same remaining budget).
+
+25. **Gaslighting** (4:19) (Icon shown, but not explicitly defined in this segment; definition implied from common understanding: manipulating someone into doubting their own sanity/reality).
+
+26. **Gish Gallop** (4:20)
+    *   Definition: Bombarding a political opponent with obnoxiously complex questions in rapid fire during a debate to make the opponent appear to not know what they are talking about.
+    *   Ex: One debater presents a wall of text; the other says "Uhm..." The first then says, "See, you don't know anything about this topic."
+
+27. **Glittering Generalities** (4:29)
+    *   Definition: Emotionally appealing words that are applied to a product or idea, but present no concrete argument or analysis. They associate the product/idea with an established "feel-good" value, asking for approval without examining the reason.
+    *   Ex: "Things go better with Coke," "Creamy. Dreamy. Icy. Chocolatey. (McDonald's)," "HOPE" (Obama poster), "I'm lovin' it (McDonald's)."
+
+28. **Guilt by Association** (4:47)
+    *   Definition: Used to persuade a target audience to disapprove of an action or idea by suggesting that the idea is popular among disliked groups.
+    *   Ex: Person 1: "I like oranges!" Hated Group: "We do too!" Person 1: "I hate oranges."
+
+29. **Half Truth** (4:58)
+    *   Definition: A deceptive statement that includes some element of truth. It can be partly true, totally true but only part of the whole truth, or use deceptive elements like improper punctuation.
+    *   Ex: "All birds can fly (penguin shown as exception)"; "I didn't steal your password *this week* (but did last week)"; "American-history teacher" vs. "American history-teacher."
+
+30. **Information Overload** (5:13)
+    *   Definition: An entity floods a certain topic with an enormous amount of information to increase the difficulty of understanding an issue and effectively making decisions. (Sponsor break follows, then the technique is resumed).
+    *   Ex: "The Eiffel Tower is 984 feet high" surrounded by many other distracting numbers, then a "TOP SECRET" stamp over it.
+
+31. **Intentional Vagueness** (7:07)
+    *   Definition: Saying something so vague as to be meaningless or open to multiple interpretations, distracting attention from legitimate concerns or questions.
+    *   Ex: Reporter: "Mr. President, how many homeless people are there?" President (stick figure): "Not that many."
+
+32. **Labeling** (7:17)
+    *   Definition: Describing someone, something, or a group with a derogatory word or phrase.
+    *   Ex: A neutral face, a crown, and a group of people all being labeled as "CORRUPT."
+
+33. **Latitudes of Acceptance** (7:22)
+    *   Definition:
+        *   Technique 1: To make someone agree to something they don't, a more extreme stance is first taken, so the actual moderate argument seems more acceptable.
+            *   Ex: "Should we allow pistols?" "NO!" "Should we allow rocket launchers?" "NO!" "What about pistols?" "Hmm... Maybe..."
+        *   Technique 2: Moderating one's own position to match the target's beliefs, then over time, slowly moving to the one previously held.
+            *   Ex: Person 1: "We shouldn't allow pistols!" Person 2: "I agree!" Person 1: "What about knives though?" Person 2: "Hmm... Maybe..."
+
+34. **Limited Hangout** (7:43)
+    *   Definition: When someone's veil of secrecy is shredded, they resort to admitting (sometimes volunteering) some of the truth while still managing to withhold the key and damaging facts. The public is often so intrigued by the new information that it never thinks to pursue the matter further.
+    *   Ex: Spy 1: "Where's the treasure?" Spy 2 (cover blown): "In the U.S.A." (Public: "Guys, we know where it is!!"). Map shows the treasure is specifically in Alaska, USA (the more damaging, withheld detail).
+
+35. **Loaded Language** (8:02)
+    *   Definition: Specific words and phrases with strong emotional implications that are used to influence the audience.
+    *   Ex: Criticism -> Demonization; Remove -> Eliminate; Discomfort -> Agony.
+
+36. **Love Bombing** (8:08)
+    *   Definition: A technique used to recruit someone to a cult or ideology by bombarding them with affection in an attempt to isolate them from their prior beliefs, values, and social support.
+    *   Ex: Cult figure telling a person: "You're amazing," "You're incredible," "You're the best."
+
+37. **Milieu Control** (8:18)
+    *   Definition: Controlling someone's communication style and environment through the use of social pressure and group language.
+    *   Ex: Slang like "Yo, what's up homie" enables group members to identify each other. If communication becomes too peculiar, it might result in isolation from the surrounding society.
+
+38. **Obfuscation** (8:34)
+    *   Definition: When a message is intentionally made difficult to understand.
+    *   Ex: "I cannot say that I do not disagree with you." (Confusing double negatives).
+
+39. **Operant Conditioning** (8:39)
+    *   Definition: A learning process where behaviors are modified through the association of stimuli with reinforcement or punishment.
+    *   Ex: Person says "I love the government!" (receives money - reinforcement). Person says "I hate the government!" (gun pointed at them - punishment).
+
+40. **Oversimplification** (8:47)
+    *   Definition: Favorable generalities are used to provide simple answers to complex problems.
+    *   Ex: "All politicians are corrupt."
+
+41. **Paltering** (8:53)
+    *   Definition: The active use of selective truthful statements to mislead.
+    *   Ex: Question: "Is the car in good shape?" Answer: "I drove it yesterday and it worked good!" (True, but 2 days ago the car broke down).
+
+42. **Pensée Unique (Single Thought)** (8:58)
+    *   Definition: Enforced reduction of discussion through the use of overly simplistic phrases or arguments.
+    *   Ex: "There's no alternative."
+
+43. **Quotes out of Context** (9:03)
+    *   Definition: Selective editing of quotes that can change meanings.
+    *   Ex: Original: "This book is absolutely perfect... for anyone who wants to immediately be put to sleep." Quoted: "This book is absolutely perfect..."
+
+44. **Rationalization** (9:08)
+    *   Definition: A defense mechanism in which people justify difficult or unacceptable feelings with seemingly logical reasons and explanations.
+    *   Ex: Person 1: "Why did you punch John?" Person 2: "It's not that big of a deal."
+
+45. **Repetition** (9:17)
+    *   Definition: The repetition of a certain symbol or slogan so that the audience remembers it.
+    *   Ex: Multiple "YES WE CAN" (Obama) posters.
+
+46. **Scapegoating** (9:23)
+    *   Definition: Assigning blame to an individual or group, thus alleviating feelings of guilt from responsible parties or distracting attention from the need to fix the problem.
+    *   Ex: "We lost because of the coach!!" (Alleviates player's guilt, distracts from poor performance).
+
+47. **Semantic Satiation** (9:33)
+    *   Definition: Technique with the intent of lessening the impact of a certain word by repeating it and using it for trivial accusations. The word becomes more normalized and doesn't have the same negative impact.
+    *   Ex: The word "CRIMINAL" is repeated many times and used for a trivial accusation ("You ate my last sandwich... you're a criminal!"), thus normalizing it and reducing its impact.
+
+48. **Smear Campaign** (9:45)
+    *   Definition: An intentional, premeditated effort to undermine an individual's or group's reputation.
+    *   Ex: Politician 1: "He cheated on his wife; he's untrustworthy!" about Politician 2.
+
+49. **Testimonials** (9:52)
+    *   Definition: Quotations, in or out of context, that are cited to support something.
+    *   Ex: A celebrity icon saying, "I support X politician."
+
+50. **Third Party Technique** (9:58)
+    *   Definition: Exploits the fact that people are more willing to accept an argument from a seemingly independent source of information than from someone with a stake in the outcome.
+    *   Ex: An unreliable AD saying "This product is amazing!" vs. a stranger (more reliable) saying "This product is amazing!"
+
+51. **Transfer** (10:07)
+    *   Definition: A technique of projecting positive or negative qualities of a person onto another one to make the second one more acceptable or to discredit him.
+    *   Ex: Qualities from Person 1 are transferred to Person 2.
+
+52. **Unstated Assumption** (10:15)
+    *   Definition: Technique used when the propaganda concept would seem less credible if explicitly stated. The concept is instead repeatedly assumed or implied.
+    *   Ex: Claim: "We shouldn't elect John as president." Stated reason: "Because he's too bossy." Unstated assumption: "People who are bossy aren't good presidents."
+
+53. **Whataboutism** (10:25)
+    *   Definition: A technique that attempts to discredit an opponent's position by charging them with hypocrisy without directly refuting or disproving their argument.
+    *   Ex: Fat person: "You should exercise more." Thin person: "What about you then?" (The advice to exercise more is still valid).
+
+54. **Misuse of Statistics** (10:33)
+    *   Definition: Reporting statistics in such a way as to inappropriately alter people's perceptions on a certain topic.
+    *   Ex: 1000 people with a $1 salary and 1 person with a $1,000,000,000 salary, leading to a misleadingly high "AVERAGE SALARY."
+
+Additional techniques:
+
+
+**I. Additional Logical Fallacies**
+
+1.  **Appeal to Pity (Argumentum ad Misericordiam):** Attempting to win support for an argument or idea by exploiting an opponent's feelings of pity or guilt.
+    *   *Ex: "You should give me an A on this paper. I know it's late, but my dog just died, and I've been so upset."*
+
+2.  **Appeal to Force (Argumentum ad Baculum):** Attempting to win an argument by threatening the other person if they don't agree.
+    *   *Ex: "You should agree that this new policy is great, or you might find yourself looking for a new job."*
+
+3.  **Naturalistic Fallacy:** Inferring an "ought" (a normative statement about what should be) from an "is" (a descriptive statement about what is). Often confused with Appeal to Nature, but more specific.
+    *   *Ex: "Because people are genetically predisposed to be selfish, we ought to act selfishly."*
+
+4.  **Fallacy of Four Terms (Quaternio Terminorum):** A formal fallacy in a categorical syllogism where it has four terms rather than the required three.
+    *   *Ex: "All fish have fins. All goldfish are fish. All humans have fins." (The terms are fish, fins, goldfish, humans – "fins" is used ambiguously or the conclusion is a non-sequitur).*
+
+5.  **Undistributed Middle:** A formal fallacy in a categorical syllogism where the middle term (the one that appears in both premises but not the conclusion) is not distributed (does not refer to all members of the category) in at least one premise.
+    *   *Ex: "All students carry backpacks. My grandfather carries a backpack. Therefore, my grandfather is a student." (The middle term "people who carry backpacks" is not distributed).*
+
+6.  **Illicit Major/Illicit Minor:** Formal fallacies in categorical syllogisms where the major or minor term is distributed in the conclusion but not in its respective premise.
+    *   *Ex (Illicit Major): "All dogs are mammals. No cats are dogs. Therefore, no cats are mammals." (Mammals is distributed in the conclusion but not the major premise).*
+
+7.  **Argument from Silence (Argumentum ex Silentio - already listed in one video, but often missed):** Drawing a conclusion based on the absence of evidence, when such absence is not itself evidence.
+    *   *Ex: "Historian X makes no mention of a conspiracy, therefore no conspiracy occurred."*
+
+8.  **Complex Question (Plurium Interrogationum):** A question that has a presupposition built in, which implies something but protects the questioner from accusations of false claims. Similar to Loaded Question.
+    *   *Ex: "Did your sales increase as a result of your misleading advertising?" (Presupposes the advertising was misleading).*
+
+9.  **Amphiboly:** A fallacy of ambiguity where the ambiguity arises from the grammatical structure of a sentence, leading to multiple possible interpretations.
+    *   *Ex: "The anthropologists went to a remote village and took photographs of the women, but they weren't developed." (Were the women or the photographs not developed?).*
+
+**II. Additional Cognitive Biases**
+
+1.  **Fundamental Attribution Error:** The tendency to over-emphasize personality-based explanations for behaviors observed in others while under-emphasizing situational explanations. (Closely related to Actor-Observer Bias, but specifically about *others*).
+    *   *Ex: "That person cut me off in traffic because they're a jerk," (not considering they might be rushing to an emergency).*
+
+2.  **Just-World Hypothesis/Fallacy:** The cognitive bias (or assumption) that a person's actions are inherently inclined to bring morally fair and fitting consequences to that person; thus, it is the assumption that all noble actions are eventually rewarded and all evil actions are eventually punished.
+    *   *Ex: "She was robbed because she was flaunting her wealth; she deserved it."*
+
+3.  **Endowment Effect:** The tendency for people to ascribe more value to things merely because they own them.
+    *   *Ex: Being unwilling to sell a mug you own for $5, even though you wouldn't have paid $5 for it if you didn't own it.*
+
+4.  **Reactance:** The urge to do the opposite of what someone wants you to do out of a need to resist a perceived attempt to constrain your freedom of choice.
+    *   *Ex: A teenager being told not to date a certain person, which makes them want to date that person even more.*
+
+5.  **Status Quo Bias:** The preference for the current state of affairs. The current baseline (or status quo) is taken as a reference point, and any change from that baseline is perceived as a loss.
+    *   *Ex: Preferring to stick with an old, familiar software even if a new one is objectively better.*
+
+6.  **Zero-Risk Bias:** Preference for reducing a small risk to zero over a greater reduction in a larger risk.
+    *   *Ex: Preferring a policy that eliminates a 1% risk of a minor problem completely, over a policy that reduces a 50% risk of a major problem down to 25%.*
+
+7.  **Clustering Illusion:** The tendency to erroneously perceive "streaks" or "clusters" in random sequences. (Related to Hot Hand Fallacy).
+    *   *Ex: Seeing a series of heads in coin flips and believing the coin is "on a streak" or that tails is "due."*
+
+8.  **Neglect of Probability (or Base Rate Neglect - similar to Base Rate Fallacy):** The tendency to disregard probability when making a decision under uncertainty.
+    *   *Ex: Fearing a shark attack (low probability) more than a car accident (higher probability) after watching a shark movie.*
+
+9.  **Rosy Retrospection:** The tendency to remember past events as being more positive than they were in reality.
+    *   *Ex: Remembering high school as "the best years of my life," forgetting the daily stresses and anxieties.*
+
+10. **System Justification:** The tendency to defend and bolster the status quo, i.e., to see existing social, economic, and political arrangements as fair and legitimate, even if they are disadvantageous to oneself or one's group.
+    *   *Ex: People in poverty sometimes defending the economic system that contributes to their poverty.*
+
+11. **Functional Fixedness:** A cognitive bias that limits a person to using an object only in the way it is traditionally used.
+    *   *Ex: Needing a hammer but not thinking to use a heavy wrench as a substitute because a wrench is "for turning bolts."*
+
+**III. Additional Propaganda Techniques**
+
+1.  **Card Stacking (or Cherry Picking - also a fallacy):** Presenting only information that is positive to an idea or proposal and omitting information contrary to it.
+    *   *Ex: A pharmaceutical ad that highlights all the benefits of a drug but quickly mumbles through or minimizes the side effects.*
+
+2.  **Name-Calling:** Using derogatory language or words that carry a negative connotation when describing an enemy or opponent. (A specific form of Ad Hominem).
+    *   *Ex: Referring to an opposing political party's members as "socialists" or "fascists" in a derogatory way, regardless of their actual policies.*
+
+3.  **Slogans:** Brief, striking, or memorable phrases used in advertising or political campaigning.
+    *   *Ex: "Make America Great Again," "Yes We Can," "Just Do It."*
+
+4.  **Astroturfing:** Creating a false impression of widespread grassroots support for a policy, individual, or product, where the support is actually orchestrated by a central entity.
+    *   *Ex: A company paying people to write positive online reviews for its product or to protest against a competitor.*
+
+5.  **Managing the News / Controlling the Narrative:** Influencing what information the public receives by controlling its dissemination, often by limiting access, emphasizing certain aspects, or creating diversions.
+    *   *Ex: A government releasing bad news late on a Friday afternoon, hoping it gets less media attention.*
+
+6.  **Creating an "Us vs. Them" Mentality (Ingroup/Outgroup):** Framing issues in terms of a conflict between a virtuous "us" (the ingroup) and a malevolent "them" (the outgroup).
+    *   *Ex: Political rhetoric that constantly emphasizes "the people" versus "the corrupt elite" or "our nation" versus "foreign threats."*
+
+7.  **Censorship:** The suppression of speech, public communication, or other information that may be considered objectionable, harmful, sensitive, or inconvenient.
+    *   *Ex: A government blocking websites that criticize its policies.*
+
+8.  **Ad Nauseam Argumentation:** Repeating an assertion extensively until it is accepted as true, regardless of whether it has been disproven or lacks evidence. (Related to Firehose of Falsehood and Repetition).
+    *   *Ex: A political commentator repeating a false claim about an opponent on every show they appear on.*
+
+9.  **Appeal to Patriotism (related to Flag Waving):** Appealing to a love of one's country to persuade or manipulate.
+    *   *Ex: "If you truly love this country, you'll support this war/policy."*
+
+10. **Sweet Folks / Just Plain Folks (similar to Plain Folk):** Presenting oneself or one's candidate as an ordinary person who can understand and empathize with a listener's concerns.
+    *   *Ex: A wealthy politician photographed doing "everyday" things like eating at a diner or wearing casual clothes to appear relatable.*
+
+
+
+
