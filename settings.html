@@ -16,7 +16,7 @@
     </header>
     <main>
         <section id="settings-form-section">
-            <h2>OpenAI API Configuration</h2>
+            <h2>API Configuration</h2>
             <form id="settings-form">
                 <div>
                     <label for="api-key">API Key:</label>
@@ -24,11 +24,16 @@
                 </div>
                 <div>
                     <label for="base-url">Base URL:</label>
-                    <input type="url" id="base-url" name="base-url" placeholder="https://api.openai.com" required>
+                    <input type="url" id="base-url" name="base-url" placeholder="e.g., https://api.openai.com/v1 or https://generativelanguage.googleapis.com/v1beta/openai" required>
+                    <small style="display: block; color: var(--text-muted); margin-top: 8px;">
+                        Need help? Check out the 
+                        <a href="openrouter_guide.html" style="color: var(--border-focus); text-decoration: none;">OpenRouter Setup Guide</a> or 
+                        <a href="gemini_guide.html" style="color: var(--border-focus); text-decoration: none;">Gemini Setup Guide</a>.
+                    </small>
                 </div>
                 <div>
                     <label for="default-model">Default Model:</label>
-                    <input type="text" id="default-model" name="default-model" placeholder="gpt-3.5-turbo" required>
+                    <input type="text" id="default-model" name="default-model" placeholder="e.g., gpt-4o, models/gemini-1.5-flash-latest" required>
                 </div>
                 <div>
                     <label for="temperature">Temperature (0.0 - 2.0):</label>

@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load existing settings
     apiKeyInput.value = getSetting(settingsKeys.apiKey) || '';
-    baseUrlInput.value = getSetting(settingsKeys.baseUrl) || 'https://api.openai.com';
-    defaultModelInput.value = getSetting(settingsKeys.defaultModel) || 'gpt-3.5-turbo';
+    baseUrlInput.value = getSetting(settingsKeys.baseUrl) || ''; // Default to empty
+    defaultModelInput.value = getSetting(settingsKeys.defaultModel) || ''; // Default to empty
     temperatureInput.value = getSetting(settingsKeys.temperature) || '0.3';
 
     settingsForm.addEventListener('submit', (event) => {

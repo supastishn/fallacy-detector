@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRouter API Key Setup Guide - Fallacy Detector</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        main a { color: var(--border-focus); text-decoration: none; }
+        main a:hover { text-decoration: underline; }
+        main h3 { margin-top: 1.5em; margin-bottom: 0.5em; }
+        main ul { margin-left: 20px; padding-left: 20px; }
+        main li { margin-bottom: 0.5em; }
+        .guide-nav { margin-bottom: 2em; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OpenRouter API Key Setup Guide</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="settings.html">Settings</a>
+            <button class="theme-toggle">🌙 Dark</button>
+        </nav>
+    </header>
+    <main>
+        <div class="guide-nav">
+            <a href="settings.html">&laquo; Back to API Settings</a>
+        </div>
+
+        <h2>Setting Up Your OpenRouter API Key</h2>
+        <p>OpenRouter.ai provides a unified interface to access various Large Language Models (LLMs). To use OpenRouter with this application, you'll need an API key and the correct base URL.</p>
+
+        <h3>Step 1: Create an OpenRouter Account</h3>
+        <ul>
+            <li>Go to <a href="https://openrouter.ai" target="_blank">https://openrouter.ai</a>.</li>
+            <li>Sign up for a new account or log in if you already have one.</li>
+        </ul>
+
+        <h3>Step 2: Fund Your Account</h3>
+        <ul>
+            <li>OpenRouter operates on a pre-paid credit system. You'll need to add funds to your account to use the API for paid models. Some models may be available for free or with a free trial quota.</li>
+            <li>Navigate to the "Billing" or "Credits" section in your OpenRouter dashboard and add credits if necessary.</li>
+        </ul>
+
+        <h3>Step 3: Get Your API Key</h3>
+        <ul>
+            <li>Once logged in, navigate to the "Keys" section (usually found under your account settings or API settings).</li>
+            <li>Click on "Create Key" or a similar button.</li>
+            <li>Give your key a descriptive name (e.g., "FallacyDetectorApp").</li>
+            <li>Copy the generated API key. Treat this key like a password and keep it secure.</li>
+        </ul>
+
+        <h3>Step 4: Configure in This Application</h3>
+        <ul>
+            <li>Go to the <a href="settings.html">API Key Settings page</a> in this application.</li>
+            <li>Paste the copied OpenRouter API key into the "API Key" field.</li>
+            <li>In the "Base URL" field, enter: <code>https://openrouter.ai/api/v1</code></li>
+            <li>You can leave the "Default Model" field blank if you want OpenRouter to use its default, or enter a specific model available on OpenRouter that you wish to use by default (e.g., <code>openai/gpt-4o</code>, <code>anthropic/claude-3-opus</code>, <code>mistralai/mistral-7b-instruct</code>). Check the OpenRouter documentation for available model identifiers.</li>
+            <li>Click "Save Settings".</li>
+            <li>You can use the "Test API Connection" button on the settings page to verify your setup.</li>
+        </ul>
+
+        <h3>Important Notes:</h3>
+        <ul>
+            <li><strong>Model Availability:</strong> Not all models are free. Check the pricing on OpenRouter for each model you intend to use.</li>
+            <li><strong>Free Model Recommendations (check OpenRouter for current availability and terms):</strong>
+                <ul>
+                    <li>Examples of potentially free models (text-only, verify on OpenRouter):
+                        <ul>
+                            <li><code>deepseek/deepseek-r1:free</code></li>
+                            <li><code>deepseek/deepseek-chat-v3-0324:free</code></li>
+                        </ul>
+                    </li>
+                    <li>For models with image support, check OpenRouter's model list for current free options.</li>
+                    <li><em>Model names, capabilities, and availability can change; always verify on OpenRouter.ai.</em></li>
+                </ul>
+            </li>
+            <li><strong>Rate Limits:</strong> Be aware of any rate limits OpenRouter might impose on your account or specific models, especially free tiers (e.g., free models often have a daily limit).</li>
+            <li><strong>Security:</strong> Your API key is stored in your browser's local storage. Clear application storage via browser settings if you are on a shared computer and have finished your session.</li>
+        </ul>
+        <p>That's it! You should now be able to use the application with models via OpenRouter.ai.</p>
+        <div class="guide-nav" style="margin-top: 2em;">
+            <a href="settings.html">&laquo; Back to API Settings</a>
+        </div>
+    </main>
+    <footer>
+        <p>
+            <a href="https://supastishn.github.io" target="_blank">See more cool stuff</a>
+            <a href="https://github.com/supastishn/fallacy-detector" target="_blank">See the source code</a>
+        </p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script>
+        // Initialize theme for guide pages
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+        });
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google AI Studio Setup Guide - Fallacy Detector</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        main a { color: var(--border-focus); text-decoration: none; }
+        main a:hover { text-decoration: underline; }
+        main h3 { margin-top: 1.5em; margin-bottom: 0.5em; }
+        main ul { margin-left: 20px; padding-left: 20px; }
+        main li { margin-bottom: 0.5em; }
+        .guide-nav { margin-bottom: 2em; }
+        .important-note { /* Used for general important notes and privacy warnings */
+            background-color: var(--warning-bg);
+            color: var(--warning-text);
+            border: 1px solid var(--warning-border);
+            padding: 1em;
+            border-radius: 8px;
+            margin: 1em 0;
+        }
+        .important-note strong { color: var(--warning-text); font-weight: bold; }
+        code {
+            background-color: var(--bg-secondary);
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, Consolas, 'Courier New', monospace;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+        main ul ul { margin-top: 0.5em; } /* Indent sub-lists a bit more nicely */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Google AI Studio Setup Guide</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="settings.html">Settings</a>
+            <button class="theme-toggle">🌙 Dark</button>
+        </nav>
+    </header>
+    <main>
+        <div class="guide-nav">
+            <a href="settings.html">&laquo; Back to API Settings</a>
+        </div>
+
+        <h2>Setting Up Google AI Studio (OpenAI Compatibility)</h2>
+        <p>Google AI Studio provides access to Gemini models, and you can use its API with an OpenAI-compatible endpoint. This allows you to use Gemini models with this application.</p>
+
+        <div class="important-note">
+             <p><strong>Privacy Warning:</strong> Google may use data submitted to Gemini models via the API to improve their products. Please review Google's Terms of Service and Gemini API Terms for more information. Do not send sensitive or confidential information.</p>
+        </div>
+
+        <h3>Step 1: Access Google AI Studio &amp; Get an API Key</h3>
+        <ul>
+            <li>Go to <a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">Google AI Studio</a>.</li>
+            <li>Sign in with your Google account.</li>
+            <li>Once in AI Studio, look for an option like "Get API key" (often found in the left sidebar or under a "Get started" section).</li>
+            <li>Click on "Create API key in new project" or select an existing project.</li>
+            <li>Copy the generated API key. Treat this key like a password and keep it secure.</li>
+        </ul>
+
+        <h3>Step 2: Configure in This Application</h3>
+        <ul>
+            <li>Go to the <a href="settings.html">API Key Settings page</a> in this application.</li>
+            <li>Paste the copied Google AI Studio API key into the "API Key" field.</li>
+            <li>In the "Base URL" field, enter: <code>https://generativelanguage.googleapis.com/v1beta/openai</code></li>
+            <li>For the "Default Model" field, you can use one of the following examples (or other models compatible with the API key and base URL). Always verify the exact model identifier and its capabilities in your Google AI Studio console or the official Gemini documentation:
+                <ul>
+                    <li><code>gemini/gemini-2.0-flash</code></li>
+                    <li><code>gemini/gemini-2.5-flash-preview-05-20</code></li>
+                    <li><code>gemini/gemini-2.5-flash-preview-04-17</code></li>
+                </ul>
+                 <p style="font-size: 0.9em; margin-top: 0.5em;">Note: The exact model name format required by the API (e.g., <code>models/gemini-1.5-flash-latest</code> vs <code>gemini-1.5-flash</code>) can vary. Refer to Google's official Gemini API documentation for the precise identifiers.</p>
+            </li>
+            <li>Check the official Gemini models documentation for the most current list of compatible model names for the API. The model name you enter here must be exactly as expected by the <code>generativelanguage.googleapis.com</code> API.</li>
+            <li>Click "Save Settings".</li>
+            <li>You can use the "Test API Connection" button to verify your setup. Ensure the model name used for testing is compatible.</li>
+        </ul>
+
+        <h3>Important Notes:</h3>
+        <ul>
+            <li><strong>Model Naming:</strong> The exact model names (e.g., <code>gemini-pro</code>, <code>models/gemini-1.5-flash-latest</code>) required by the API might differ from display names in AI Studio. Refer to Google's API documentation for the correct identifiers to use in the "Default Model" field.</li>
+            <li><strong>Capabilities:</strong> Gemini models often support multimodal inputs (text and images). Ensure the model you select supports the type of input you intend to use.</li>
+            <li><strong>Rate Limits:</strong> Free tiers of the Gemini API typically have rate limits (e.g., requests per minute or per day). The user mentioned specific limits: 500 requests/day for one model and 1500 requests/day for another. Check your Google AI Studio console or documentation for the limits applicable to your key and models.</li>
+            <li><strong>Security:</strong> Your API key is stored in your browser's local storage. Clear application storage via browser settings if you are on a shared computer and have finished your session.</li>
+        </ul>
+        <p>That's it! You should now be able to use the application with Google's Gemini models via their OpenAI-compatible endpoint.</p>
+
+        <div class="guide-nav" style="margin-top: 2em;">
+            <a href="settings.html">&laquo; Back to API Settings</a>
+        </div>
+    </main>
+    <footer>
+        <p>
+            <a href="https://supastishn.github.io" target="_blank">See more cool stuff</a>
+            <a href="https://github.com/supastishn/fallacy-detector" target="_blank">See the source code</a>
+        </p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script>
+        // Initialize theme for guide pages
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+        });
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+</body>
+</html>
